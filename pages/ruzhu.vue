@@ -7,7 +7,7 @@
         <div class="text1">更快速、更安全</div>
         <div class="btns">
           <a href="#ruzhu">
-            <component-button value="便利店超市店长入驻"/>
+            <component-button value="便利店超市 店长入驻"/>
           </a>
         </div>
       </div>
@@ -74,7 +74,6 @@
           </div>
         </div>
       </div>
-      <div class="process"></div>
       <div class="process-board">
         <div class="title">超商店长 入驻流程</div>
         <img src="~assets/img/entering_pic007.png" alt>
@@ -209,14 +208,16 @@ export default {
     width: 100%;
     height: 100vh;
     background-image: url("~assets/img/entering_pic001.jpg");
-    padding: 410px 0 0 363px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 44vh 0 0 20vw;
     .swiper-text {
       .text1 {
         font-size: 70px;
         font-family: PingFangSC-Regular;
         font-weight: bold;
         color: rgba(255, 255, 255, 1);
-        line-height: 80px;
+        line-height: 70px;
       }
       .text2 {
         font-size: 46px;
@@ -234,7 +235,9 @@ export default {
   }
   .content {
     width: 100%;
-    background-image: url("~assets/img/home_bg.jpg");
+    // background-image: url("~assets/img/home_bg.jpg");
+    // background-repeat: no-repeat;
+    // background-size: 100% 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -293,10 +296,12 @@ export default {
       width: 100%;
       height: 635px;
       background-image: url("~assets/img/entering_pic005.jpg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-left: 263px;
+      padding-left: 20vw;
       div {
         font-size: 42px;
         font-family: PingFangSC-Regular;
@@ -344,6 +349,8 @@ export default {
     .process-board {
       width: 100%;
       background-image: url("~assets/img/brand_bg_02.jpg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
       height: 1022px;
       padding-top: 174px;
       text-align: center;
@@ -360,6 +367,8 @@ export default {
       width: 100%;
       height: 663px;
       background-image: url("~assets/img/entering_bg.png");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
       display: grid;
       justify-items: center;
       align-items: center;

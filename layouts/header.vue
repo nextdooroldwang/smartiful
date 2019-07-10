@@ -13,7 +13,7 @@
           <div class="border" :class="{'border-active':item.active}"></div>
         </div>
       </div>
-      <div class="download" @click="$router.push({ path:'/xiazai' })" v-if="!xiazai">下载APP</div>
+      <div class="download" @click="$router.push({ path:'/xiazai' })">下载APP</div>
     </div>
   </div>
 </template>

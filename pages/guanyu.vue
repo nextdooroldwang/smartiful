@@ -26,7 +26,7 @@
           </div>
         </div>
       </div>
-      <div class="photo-image">
+      <div class="ruzhu-image">
         <div class="title">超商店长 入驻流程</div>
         <div class="items">
           <div class="item">
@@ -173,9 +173,11 @@ export default {
   margin: 0 auto;
   .ruzhu-ad {
     background-image: url("~assets/img/about_pic001.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     width: 100%;
     height: 100vh;
-    padding: 450px 0 0 364px;
+    padding: 44vh 0 0 20vw;
     .swiper-text {
       .text1 {
         font-size: 84px;
@@ -243,13 +245,14 @@ export default {
         }
       }
     }
-    .photo-image {
+    .ruzhu-image {
       width: 100%;
       height: 547px;
       background: #ff8900;
       display: grid;
       grid-template-rows: 152px 1fr;
       justify-items: center;
+      justify-content: center;
       .title {
         align-self: center;
         font-size: 42px;

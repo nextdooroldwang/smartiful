@@ -31,7 +31,9 @@ export default {
     width: 100%;
     height: 100vh;
     background-image: url("~assets/img/app_pic01.jpg");
-    padding: 304px 0 0 363px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 44vh 0 0 20vw;
     .swiper-text {
       .text1 {
         font-size: 80px;

@@ -5,8 +5,8 @@
         <div class="swiper-slide">
           <img :src="banners[0]">
           <div class="swiper-text">
-            <div class="text1">AI智能图像识别技术</div>
-            <div class="text2">品牌商直控终端，远程监控货架</div>
+            <div class="text1">B2S货架督导</div>
+            <div class="text2">让零售业更有效率的服务消费者</div>
             <div class="btns">
               <component-button value="品牌加盟" @onclick="$router.push({path:'/jiameng'})"/>
               <component-button value="店长入驻" @onclick="$router.push({path:'/ruzhu'})"/>
@@ -14,10 +14,26 @@
           </div>
         </div>
         <div class="swiper-slide">
-          <img :src="banners[0]">
+          <img :src="banners[2]">
+          <div class="swiper-text">
+            <div class="text2">B2S货架督导全生态平台</div>
+            <div class="text1">集合500万实体零售门店</div>
+            <div class="btns">
+              <component-button value="品牌加盟" @onclick="$router.push({path:'/jiameng'})"/>
+              <component-button value="店长入驻" @onclick="$router.push({path:'/ruzhu'})"/>
+            </div>
+          </div>
         </div>
         <div class="swiper-slide">
-          <img :src="banners[0]">
+          <img :src="banners[1]">
+          <div class="swiper-text">
+            <div class="text1">AI智能图像识别技术</div>
+            <div class="text2">品牌商直控终端，远程监控货架</div>
+            <div class="btns">
+              <component-button value="品牌加盟" @onclick="$router.push({path:'/jiameng'})"/>
+              <component-button value="店长入驻" @onclick="$router.push({path:'/ruzhu'})"/>
+            </div>
+          </div>
         </div>
       </div>
       <div class="swiper-pagination swiper-pagination-bullets"></div>
@@ -72,7 +88,9 @@
 </template>
 
 <script>
-import pic001 from '@/assets/img/home_pic005.jpg'
+import pic001 from '@/assets/img/home_pic001.jpg'
+import pic005 from '@/assets/img/home_pic005.jpg'
+import pic006 from '@/assets/img/home_pic006.jpg'
 import pic002 from '@/assets/img/home_pic002.jpg'
 import pic003 from '@/assets/img/home_pic003.jpg'
 import pic004 from '@/assets/img/home_pic004.jpg'
@@ -82,8 +100,8 @@ export default {
     return {
       banners: [
         pic001,
-        pic001,
-        pic001
+        pic005,
+        pic006
       ],
       swiperOption: {
         loop: true,
@@ -161,10 +179,14 @@ export default {
     .swiper-pagination-bullet-active {
       background: rgb(255, 255, 255);
     }
+    img {
+      width: 100%;
+      height: 100%;
+    }
     .swiper-text {
       position: absolute;
-      top: 523px;
-      left: 362px;
+      top: 53%;
+      left: 18vw;
       z-index: 888;
       .text1 {
         font-size: 76px;
@@ -179,9 +201,10 @@ export default {
         font-weight: 400;
         color: rgba(255, 255, 255, 1);
         line-height: 60px;
-        margin: 20px 0 68px 0;
+        margin: 20px 0;
       }
       .btns {
+        margin-top: 48px;
         div {
           margin: 0 12px;
         }
@@ -233,6 +256,8 @@ export default {
     width: 100%;
     height: 1019px;
     background-image: url("~assets/img/home_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     display: flex;
     justify-content: center;
 

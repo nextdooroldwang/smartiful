@@ -328,7 +328,9 @@ export default {
     width: 100%;
     height: calc(100vh + 123px);
     background-image: url("~assets/img/brand_pic001.jpg");
-    padding: 397px 0 0 365px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 44vh 0 0 20vw;
     .swiper-text {
       .text1 {
         font-size: 70px;
@@ -369,6 +371,8 @@ export default {
     }
     .box {
       background-image: url("~assets/img/brand_bg_01.jpg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
       height: 1104px;
       display: grid;
       align-items: end;
@@ -477,6 +481,8 @@ export default {
     }
     .ad {
       background-image: url("~assets/img/brand_bg_02.jpg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
       height: 1022px;
       display: grid;
       align-items: center;
@@ -516,6 +522,8 @@ export default {
     .join {
       height: 663px;
       background-image: url("~assets/img/entering_bg.png");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
       display: grid;
       justify-items: center;
       align-items: center;
