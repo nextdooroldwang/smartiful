@@ -1,23 +1,27 @@
 <template>
   <div class="ruzhu-container">
     <div class="ruzhu-ad">
-      <div class="swiper-text">
-        <div class="text2">与500万实体零售门店做邻居</div>
-        <div class="text2">在线领补助、提现即刻到账</div>
-        <div class="text1">更快速、更安全</div>
-        <div class="btns">
-          <a href="#ruzhu">
-            <component-button value="便利店超市 店长入驻"/>
-          </a>
+      <transition name="right-fade">
+        <div class="swiper-text" v-if="show1">
+          <div class="text2">与500万实体零售门店做邻居</div>
+          <div class="text2">在线领补助、提现即刻到账</div>
+          <div class="text1">更快速、更安全</div>
+          <div class="btns">
+            <a href="#ruzhu">
+              <component-button value="便利店超市 店长入驻"/>
+            </a>
+          </div>
         </div>
-      </div>
+      </transition>
     </div>
     <div class="content">
       <div class="main">
         <div class="mart">
           <div class="title">
             <span>这</span>
-            <img width="186" height="95" src="~assets/img/home_text500.png" alt>
+            <transition name="big-fade">
+              <img width="186" height="95" src="~assets/img/home_text500.png" alt v-if="show2">
+            </transition>
             <div>
               <div>万家便利店</div>
               <div>都领到了陈列补助费</div>
@@ -40,38 +44,52 @@
           </div>
         </div>
       </div>
+
       <div class="photo-image">
-        <div>店长通过上传照⽚</div>
-        <div>直观反映商品陈列表现</div>
-        <div>通过达标机制</div>
-        <div>获得品牌商现⾦奖励</div>
+        <transition name="right-fade">
+          <div v-if="show3">店长通过上传照⽚</div>
+        </transition>
+        <transition name="right-fade">
+          <div v-if="show3">直观反映商品陈列表现</div>
+        </transition>
+        <transition name="right-fade">
+          <div v-if="show3">通过达标机制</div>
+        </transition>
+        <transition name="right-fade">
+          <div v-if="show3">获得品牌商现⾦奖励</div>
+        </transition>
       </div>
+
       <div class="photo">
         <div class="stair">
-          <img width="598px" height="591px" src="~assets/img/entering_pic006.jpg">
-          <div class="text" style="width:537px">
-            <div class="sub">
-              <div class="sub-text">
-                1、只需要一部手机登录“卖更多”平台，一键拍照，极简的操作步骤和拍照上
-                传流程，让更多零售人员使用无门槛零压力。
+          <transition name="right-fade">
+            <img width="598px" height="591px" src="~assets/img/entering_pic006.jpg" v-if="show4">
+          </transition>
+          <transition name="left-fade">
+            <div class="text" style="width:537px" v-if="show4">
+              <div class="sub">
+                <div class="sub-text">
+                  1、只需要一部手机登录“卖更多”平台，一键拍照，极简的操作步骤和拍照上
+                  传流程，让更多零售人员使用无门槛零压力。
+                </div>
+              </div>
+              <div class="sub">
+                <div class="sub-text">
+                  2、最快几分钟后，终端零售商即可查看到此次陈列展示得分，及对应的补助
+                  金收入。
+                </div>
+              </div>
+              <div class="sub">
+                <div class="sub-text">3、对审核不满意的照片有一次申诉机会，不让任何上传结果有争议。</div>
+              </div>
+              <div class="sub">
+                <div class="sub-text">
+                  4、每日获得陈助补助费用明晰准确，按月满额即可提现，到账快速安全，每
+                  月都可为店面增加不菲的定向收。
+                </div>
               </div>
             </div>
-            <div class="sub">
-              <div class="sub-text">
-                2、最快几分钟后，终端零售商即可查看到此次陈列展示得分，及对应的补助
-                金收入。
-              </div>
-            </div>
-            <div class="sub">
-              <div class="sub-text">3、对审核不满意的照片有一次申诉机会，不让任何上传结果有争议。</div>
-            </div>
-            <div class="sub">
-              <div class="sub-text">
-                4、每日获得陈助补助费用明晰准确，按月满额即可提现，到账快速安全，每
-                月都可为店面增加不菲的定向收。
-              </div>
-            </div>
-          </div>
+          </transition>
         </div>
       </div>
       <div class="process-board">
@@ -183,9 +201,13 @@ export default {
         id: 2,
         path: pic004
       },],
-      options1: [],
-      options2: [],
-      options3: [],
+      options1: [{ name: '辽宁省' }],
+      options2: [{ name: '沈阳市' }],
+      options3: [{ name: '和平区' }, { name: '沈河区' }, { name: '于洪区' }, { name: '浑南区' }, { name: '沈北区' },],
+      show1: false,
+      show2: false,
+      show3: false,
+      show4: false,
     }
   },
   components: {
@@ -197,11 +219,36 @@ export default {
     onSubmit () {
       console.log(this.form)
     },
+    handleScroll () {
+      var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      let height = document.documentElement.clientHeight
+      console.log("滚动距离" + scrollTop);
+      if (scrollTop > 200) {
+        this.show2 === false && (this.show2 = true)
+      }
+      if (scrollTop > height / 2 + 900) {
+        this.show3 === false && (this.show3 = true)
+      }
+      if (scrollTop > height / 2 + 900 + 650) {
+        this.show4 === false && (this.show4 = true)
+      }
+
+    },
+  },
+  mounted () {
+    this.show1 = true
+    this.handleScroll();
+    window.addEventListener('scroll', this.handleScroll)
+  },
+
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll)
   },
 }
 </script>
 
 <style lang="less">
+@import "../assets/less/translate.less";
 .ruzhu-container {
   margin: 0 auto;
   .ruzhu-ad {
@@ -310,6 +357,7 @@ export default {
       }
     }
     .photo {
+      min-height: 600px;
       display: flex;
       flex-direction: column;
       align-items: center;

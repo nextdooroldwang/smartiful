@@ -1,16 +1,18 @@
 <template>
   <div class="xiazai-container">
     <div class="xiazai-ad">
-      <div class="swiper-text">
-        <div class="text1">下载“卖更多”</div>
-        <div class="text2">手机微信扫一扫左侧二维码，</div>
-        <div class="text2">即可登录【卖更多】小程序</div>
-        <div class="text3">目前仅对已注册用户开放，请确保您已加入【卖更多】</div>
-        <div class="btns">
-          <component-button value="品牌商加盟" @onclick="$router.push({path:'/jiameng'})"/>
-          <component-button value="便利店超市 店长入驻" @onclick="$router.push({path:'/ruzhu'})"/>
+      <transition name="right-fade">
+        <div class="swiper-text" v-if="show1">
+          <div class="text1">下载“卖更多”</div>
+          <div class="text2">手机微信扫一扫左侧二维码，</div>
+          <div class="text2">即可登录【卖更多】小程序</div>
+          <div class="text3">目前仅对已注册用户开放，请确保您已加入【卖更多】</div>
+          <div class="btns">
+            <component-button value="品牌商加盟" @onclick="$router.push({path:'/jiameng'})"/>
+            <component-button value="便利店超市 店长入驻" @onclick="$router.push({path:'/ruzhu'})"/>
+          </div>
         </div>
-      </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -18,13 +20,24 @@
 <script>
 import ComponentButton from '@/components/Button'
 export default {
+  data () {
+    return {
+      show1: false
+    }
+  },
   components: {
     ComponentButton
   },
+
+  mounted () {
+    this.show1 = true
+  },
+
 }
 </script>
 
 <style lang="less">
+@import "../assets/less/translate.less";
 .xiazai-container {
   margin: 0 auto;
   .xiazai-ad {

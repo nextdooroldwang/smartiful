@@ -1,27 +1,33 @@
 <template>
   <div class="jiameng-container">
     <div class="jiameng-ad">
-      <div class="swiper-text">
-        <div class="text1">商品智能识别，</div>
-        <div class="text1">直控零售终端</div>
-        <div class="text2">帮助品牌商解决陈列督导难题</div>
-        <div class="btns">
-          <a href="#join">
-            <component-button value="品牌商加盟"/>
-          </a>
+      <transition name="right-fade">
+        <div class="swiper-text" v-if="show1">
+          <div class="text1">商品智能识别，</div>
+          <div class="text1">直控零售终端</div>
+          <div class="text2">帮助品牌商解决陈列督导难题</div>
+          <div class="btns">
+            <a href="#join">
+              <component-button value="品牌商加盟"/>
+            </a>
+          </div>
         </div>
-      </div>
+      </transition>
     </div>
     <div class="content">
-      <div class="card">
-        <img src="~assets/img/brand_pic002.png" alt>
-      </div>
+      <transition name="top-fade">
+        <div class="card" v-if="show2">
+          <img src="~assets/img/brand_pic002.png" alt>
+        </div>
+      </transition>
       <div class="box">
         <div class="box-grid">
           <div class="grid-item">
-            <div class="icon">
-              <img src="~assets/img/brand_ico_01.jpg" alt>
-            </div>
+            <transition name="bottom-fade">
+              <div class="icon" v-if="show3">
+                <img src="~assets/img/brand_ico_01.jpg" alt>
+              </div>
+            </transition>
             <div class="title">减少工人成本</div>
             <div class="sub-title">
               <span>无需专职督导人员</span>
@@ -31,9 +37,11 @@
             <div class="line-column"></div>
           </div>
           <div class="grid-item">
-            <div class="icon">
-              <img src="~assets/img/brand_ico_02.jpg" alt>
-            </div>
+            <transition name="bottom-fade">
+              <div class="icon" v-if="show3">
+                <img src="~assets/img/brand_ico_02.jpg" alt>
+              </div>
+            </transition>
             <div class="title">区域性全覆盖</div>
             <div class="sub-title">
               <span>全区域性覆盖</span>
@@ -43,9 +51,11 @@
             <div class="line-column"></div>
           </div>
           <div class="grid-item">
-            <div class="icon">
-              <img src="~assets/img/brand_ico_03.jpg" alt>
-            </div>
+            <transition name="bottom-fade">
+              <div class="icon" v-if="show3">
+                <img src="~assets/img/brand_ico_03.jpg" alt>
+              </div>
+            </transition>
             <div class="title">集中管理</div>
             <div class="sub-title">
               <span>品牌商集中管理</span>
@@ -55,9 +65,11 @@
             <div class="line-column"></div>
           </div>
           <div class="grid-item">
-            <div class="icon">
-              <img src="~assets/img/brand_ico_04.jpg" alt>
-            </div>
+            <transition name="bottom-fade">
+              <div class="icon" v-if="show3">
+                <img src="~assets/img/brand_ico_04.jpg" alt>
+              </div>
+            </transition>
             <div class="title">运营成本低</div>
             <div class="sub-title">
               <span>大幅缩减陈列督导开资</span>
@@ -66,9 +78,11 @@
             </div>
           </div>
           <div class="grid-item">
-            <div class="icon">
-              <img src="~assets/img/brand_ico_05.jpg" alt>
-            </div>
+            <transition name="bottom-fade">
+              <div class="icon" v-if="show3">
+                <img src="~assets/img/brand_ico_05.jpg" alt>
+              </div>
+            </transition>
             <div class="title">高效识别</div>
             <div class="sub-title">
               <span>机器视觉识别陈列图片</span>
@@ -77,9 +91,11 @@
             </div>
           </div>
           <div class="grid-item">
-            <div class="icon">
-              <img src="~assets/img/brand_ico_06.jpg" alt>
-            </div>
+            <transition name="bottom-fade">
+              <div class="icon" v-if="show3">
+                <img src="~assets/img/brand_ico_06.jpg" alt>
+              </div>
+            </transition>
             <div class="title">快速抓取</div>
             <div class="sub-title">
               <span>亿级用户数据日增采集</span>
@@ -88,9 +104,11 @@
             </div>
           </div>
           <div class="grid-item">
-            <div class="icon">
-              <img src="~assets/img/brand_ico_07.jpg" alt>
-            </div>
+            <transition name="bottom-fade">
+              <div class="icon" v-if="show3">
+                <img src="~assets/img/brand_ico_07.jpg" alt>
+              </div>
+            </transition>
             <div class="title">快速报告</div>
             <div class="sub-title">
               <span>单店报告：3-10分钟</span>
@@ -99,9 +117,11 @@
             </div>
           </div>
           <div class="grid-item">
-            <div class="icon">
-              <img src="~assets/img/brand_ico_08.jpg" alt>
-            </div>
+            <transition name="bottom-fade">
+              <div class="icon" v-if="show3">
+                <img src="~assets/img/brand_ico_08.jpg" alt>
+              </div>
+            </transition>
             <div class="title">陈列费管理分发</div>
             <div class="sub-title">
               <span>多种灵活结算方式，提现直达</span>
@@ -113,110 +133,164 @@
       </div>
       <div class="stairs">
         <div class="stair">
-          <img width="485px" height="461px" src="~assets/img/brand_illustration_01.jpg">
-          <div class="text" style="width:528px">
-            <div class="title">商品识别</div>
-            <div class="sub">
-              <div class="sub-title">数字化货架与数据采集</div>
-              <div class="sub-text">通过手机应⽤来捕捉货架图像，通过⼈工智能更加客观且具有⼀致性的⽅式来跟踪商品销售情况。</div>
-            </div>
-            <div class="sub">
-              <div class="sub-title">激励机制</div>
-              <div class="sub-text">通过上传照⽚任务使终端店长能够跟踪商品陈列表现，并通达标机制获得品牌商现金奖励。</div>
-            </div>
-          </div>
-        </div>
-        <div class="stair">
-          <div class="text" style="width:600px">
-            <div class="title">货架管理</div>
-            <div class="sub">
-              <div class="sub-title">迅速了解货架状况</div>
-              <div class="sub-text">根据包括货架占有率、优化货架评分、货架合规性等在内的预设KPI生成优先任务及措施。</div>
-            </div>
-            <div class="sub">
-              <div class="sub-title">多样的货架合规考核</div>
-              <div
-                class="sub-text"
-              >测量每个货架是否符合陈列合规要求。通过定制有效陈列规则(例如，正确的⾯数)，无效陈列规则(例如，核⼼产品的位置错误)，公司可以迅速采取有针对性的行动。</div>
-            </div>
-            <div class="sub">
-              <div class="sub-title">货架空间规划</div>
-              <div class="sub-text">获得关于货架缺⼝的聚合分析，从所有数字化货架图中发掘可利用空间，以便进⾏更合理的陈列空间规划。</div>
-            </div>
-          </div>
-          <img width="485px" height="461px" src="~assets/img/brand_illustration_02.jpg">
-        </div>
-        <div class="stair">
-          <img width="485px" height="461px" src="~assets/img/brand_illustration_03.jpg">
-          <div class="text" style="width:532px">
-            <div class="title">大数据</div>
-            <div class="sub">
-              <div class="sub-title">全市场品类分析</div>
-              <div class="sub-text">
-                通过了解区域及各类终端内本品的SKU数量、商品陈列⽔准及货架占有率，实时观测
-                全局动向。
+          <transition name="right-fade">
+            <img
+              width="485px"
+              height="461px"
+              src="~assets/img/brand_illustration_01.jpg"
+              v-if="show4"
+            >
+          </transition>
+          <transition name="left-fade">
+            <div class="text" style="width:528px" v-if="show4">
+              <div class="title">商品识别</div>
+              <div class="sub">
+                <div class="sub-title">数字化货架与数据采集</div>
+                <div class="sub-text">通过手机应⽤来捕捉货架图像，通过⼈工智能更加客观且具有⼀致性的⽅式来跟踪商品销售情况。</div>
+              </div>
+              <div class="sub">
+                <div class="sub-title">激励机制</div>
+                <div class="sub-text">通过上传照⽚任务使终端店长能够跟踪商品陈列表现，并通达标机制获得品牌商现金奖励。</div>
               </div>
             </div>
-            <div class="sub">
-              <div class="sub-title">竞品⽐对</div>
-              <div class="sub-text">⽐较竞争品牌各自的货架份额，通过商品层⾯了解每个货架的竞争⼒。</div>
-            </div>
-          </div>
+          </transition>
         </div>
         <div class="stair">
-          <div class="text" style="width:534px">
-            <div class="title">管理面板</div>
-            <div class="sub">
-              <div class="sub-title">洞察⼤局</div>
-              <div class="sub-text">了解所有货架维度数据，包括各个渠道、地区、终端以及业务员的运营表现。</div>
-            </div>
-          </div>
-          <img width="485px" height="461px" src="~assets/img/brand_illustration_04.jpg">
-        </div>
-        <div class="stair">
-          <img width="485px" height="461px" src="~assets/img/brand_illustration_03.jpg">
-          <div class="text" style="width:592px">
-            <div class="title">防⽌造假</div>
-            <div class="sub">
-              <div class="sub-title">开通地理位置</div>
-              <div class="sub-text">店主拍照的时候必须同意访问地理位置，程序⾃动与门店地理位置匹配。</div>
-            </div>
-            <div class="sub">
-              <div class="sub-title">只能现场拍摄照片</div>
-              <div class="sub-text">
-                小程序只有拍照的功能，店主⽆法上传已存照⽚，同时会读取照⽚的拍摄时间信息进
-                行检查。
+          <transition name="right-fade">
+            <div class="text" style="width:600px" v-if="show5">
+              <div class="title">货架管理</div>
+              <div class="sub">
+                <div class="sub-title">迅速了解货架状况</div>
+                <div class="sub-text">根据包括货架占有率、优化货架评分、货架合规性等在内的预设KPI生成优先任务及措施。</div>
+              </div>
+              <div class="sub">
+                <div class="sub-title">多样的货架合规考核</div>
+                <div
+                  class="sub-text"
+                >测量每个货架是否符合陈列合规要求。通过定制有效陈列规则(例如，正确的⾯数)，无效陈列规则(例如，核⼼产品的位置错误)，公司可以迅速采取有针对性的行动。</div>
+              </div>
+              <div class="sub">
+                <div class="sub-title">货架空间规划</div>
+                <div class="sub-text">获得关于货架缺⼝的聚合分析，从所有数字化货架图中发掘可利用空间，以便进⾏更合理的陈列空间规划。</div>
               </div>
             </div>
-            <div class="sub">
-              <div class="sub-title">⼈⼯智能筛查</div>
-              <div class="sub-text">平台会⾃动⽐对历史照⽚，避免用户使用假照片反复拍摄。</div>
+          </transition>
+          <transition name="left-fade">
+            <img
+              width="485px"
+              height="461px"
+              src="~assets/img/brand_illustration_02.jpg"
+              v-if="show5"
+            >
+          </transition>
+        </div>
+        <div class="stair">
+          <transition name="right-fade">
+            <img
+              width="485px"
+              height="461px"
+              src="~assets/img/brand_illustration_03.jpg"
+              v-if="show6"
+            >
+          </transition>
+          <transition name="left-fade">
+            <div class="text" style="width:532px" v-if="show6">
+              <div class="title">大数据</div>
+              <div class="sub">
+                <div class="sub-title">全市场品类分析</div>
+                <div class="sub-text">
+                  通过了解区域及各类终端内本品的SKU数量、商品陈列⽔准及货架占有率，实时观测
+                  全局动向。
+                </div>
+              </div>
+              <div class="sub">
+                <div class="sub-title">竞品⽐对</div>
+                <div class="sub-text">⽐较竞争品牌各自的货架份额，通过商品层⾯了解每个货架的竞争⼒。</div>
+              </div>
             </div>
-          </div>
+          </transition>
+        </div>
+        <div class="stair">
+          <transition name="right-fade">
+            <div class="text" style="width:534px" v-if="show7">
+              <div class="title">管理面板</div>
+              <div class="sub">
+                <div class="sub-title">洞察⼤局</div>
+                <div class="sub-text">了解所有货架维度数据，包括各个渠道、地区、终端以及业务员的运营表现。</div>
+              </div>
+            </div>
+          </transition>
+          <transition name="left-fade">
+            <img
+              width="485px"
+              height="461px"
+              src="~assets/img/brand_illustration_04.jpg"
+              v-if="show7"
+            >
+          </transition>
+        </div>
+        <div class="stair">
+          <transition name="right-fade">
+            <img
+              width="485px"
+              height="461px"
+              src="~assets/img/brand_illustration_03.jpg"
+              v-if="show8"
+            >
+          </transition>
+          <transition name="left-fade">
+            <div class="text" style="width:592px" v-if="show8">
+              <div class="title">防⽌造假</div>
+              <div class="sub">
+                <div class="sub-title">开通地理位置</div>
+                <div class="sub-text">店主拍照的时候必须同意访问地理位置，程序⾃动与门店地理位置匹配。</div>
+              </div>
+              <div class="sub">
+                <div class="sub-title">只能现场拍摄照片</div>
+                <div class="sub-text">
+                  小程序只有拍照的功能，店主⽆法上传已存照⽚，同时会读取照⽚的拍摄时间信息进
+                  行检查。
+                </div>
+              </div>
+              <div class="sub">
+                <div class="sub-title">⼈⼯智能筛查</div>
+                <div class="sub-text">平台会⾃动⽐对历史照⽚，避免用户使用假照片反复拍摄。</div>
+              </div>
+            </div>
+          </transition>
         </div>
       </div>
       <div class="ad">
         <div class="stair">
-          <div class="text" style="width:598px;marginRight:29px">
-            <div class="title">
-              <div>"卖更多"平台代发品牌陈列费</div>
-              <div>KPI绩效管理、多维度管控</div>
-            </div>
-            <div class="sub">
-              <div class="sub-title">
-                <div>品牌商直控终端500万实体零售门店，陈列费及门店KPI考核等多维度管理，</div>
-                <div>平台自动生成丰富可视化的数据报表，满足品牌商线性管理需要。</div>
+          <transition name="right-fade">
+            <div class="text" style="width:598px;marginRight:29px" v-if="show9">
+              <div class="title">
+                <div>"卖更多"平台代发品牌陈列费</div>
+                <div>KPI绩效管理、多维度管控</div>
               </div>
-              <div class="sub-text">
-                <div>∙ 陈列费统计：按区域、经销商、门店等分类，查看每月陈列费金额发放情况。</div>
-                <div>∙ 统计分析：按区域、门店、时间段等信息，分类统计上传照片件数和陈列费金额。</div>
-                <div>∙ 合格率统计：统计照片的合格数，不合格数，申诉数。</div>
-                <div>∙ 零售商门店统计：门店分布图、热力图。</div>
-                <div>∙ 品牌终端市场陈列占比分析。</div>
+              <div class="sub">
+                <div class="sub-title">
+                  <div>品牌商直控终端500万实体零售门店，陈列费及门店KPI考核等多维度管理，</div>
+                  <div>平台自动生成丰富可视化的数据报表，满足品牌商线性管理需要。</div>
+                </div>
+                <div class="sub-text">
+                  <div>∙ 陈列费统计：按区域、经销商、门店等分类，查看每月陈列费金额发放情况。</div>
+                  <div>∙ 统计分析：按区域、门店、时间段等信息，分类统计上传照片件数和陈列费金额。</div>
+                  <div>∙ 合格率统计：统计照片的合格数，不合格数，申诉数。</div>
+                  <div>∙ 零售商门店统计：门店分布图、热力图。</div>
+                  <div>∙ 品牌终端市场陈列占比分析。</div>
+                </div>
               </div>
             </div>
-          </div>
-          <img width="574px" height="677px" src="~assets/img/brand_illustration_06.jpg">
+          </transition>
+          <transition name="left-fade">
+            <img
+              width="574px"
+              height="677px"
+              src="~assets/img/brand_illustration_06.jpg"
+              v-if="show9"
+            >
+          </transition>
         </div>
       </div>
       <div>
@@ -304,7 +378,16 @@ export default {
       }, {
         id: 4,
         name: '其他'
-      },]
+      },],
+      show1: false,
+      show2: false,
+      show3: false,
+      show4: false,
+      show5: false,
+      show6: false,
+      show7: false,
+      show8: false,
+      show9: false,
     }
   },
   components: {
@@ -316,11 +399,43 @@ export default {
     onSubmit () {
       console.log(this.form)
     },
+    handleScroll () {
+      var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      let height = document.documentElement.clientHeight
+      console.log("滚动距离" + scrollTop);
+      if (scrollTop > 10) {
+        this.show2 === false && (this.show2 = true)
+      }
+      if (scrollTop > height / 2 + 348) {
+        this.show3 === false && (this.show3 = true)
+      }
+      if (scrollTop > height / 2 + 348 + 586) {
+        this.show4 === false && (this.show4 = true)
+        this.show5 === false && (this.show5 = true)
+        this.show6 === false && (this.show6 = true)
+        this.show7 === false && (this.show7 = true)
+        this.show8 === false && (this.show8 = true)
+      }
+      if (scrollTop > height / 2 + 348 + 586 + 1000) {
+        this.show9 === false && (this.show9 = true)
+      }
+    },
+  },
+  mounted () {
+    this.show1 = true
+    this.handleScroll();
+    window.addEventListener('scroll', this.handleScroll)
+  },
+
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll)
   },
 }
 </script>
 
 <style lang="less">
+@import "../assets/less/translate.less";
+
 .jiameng-container {
   margin: 0 auto;
   min-height: 100vh;
@@ -331,6 +446,7 @@ export default {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding: 44vh 0 0 20vw;
+
     .swiper-text {
       .text1 {
         font-size: 70px;
@@ -448,6 +564,7 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 1000px;
       .stair {
         display: flex;
         width: 1180px;

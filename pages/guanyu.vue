@@ -1,10 +1,12 @@
 <template>
   <div class="ruzhu-container">
     <div class="ruzhu-ad">
-      <div class="swiper-text">
-        <div class="text2">智能化、数据化、精细化管理</div>
-        <div class="text1">从“卖更多”开始</div>
-      </div>
+      <transition name="right-fade">
+        <div class="swiper-text" v-if="show1">
+          <div class="text2">智能化、数据化、精细化管理</div>
+          <div class="text1">从“卖更多”开始</div>
+        </div>
+      </transition>
     </div>
     <div class="content">
       <div class="compared">
@@ -12,37 +14,47 @@
           <div>区别于传统货架识别工具</div>
           <div>“卖更多”将打造B2S货架督导全生态平台</div>
         </div>
-        <div class="img">
-          <img src="~assets/img/about_pic002.png" alt>
-          <div class="img-text-box">
-            <div class="img-text1">
-              <div>⾼频率稳定的终端店⻓拍照。</div>
-              <div>无额外成本、代发陈列费，SaaS模式⻓期稳定</div>
-            </div>
-            <div class="img-text2">
-              <div>需稽查员、第三⽅、众包等额外成本</div>
-              <div>竞争强烈，⻓期付费意愿不强</div>
+        <transition name="top-fade">
+          <div class="img" v-if="show2">
+            <img src="~assets/img/about_pic002.png" alt>
+            <div class="img-text-box">
+              <div class="img-text1">
+                <div>⾼频率稳定的终端店⻓拍照。</div>
+                <div>无额外成本、代发陈列费，SaaS模式⻓期稳定</div>
+              </div>
+              <div class="img-text2">
+                <div>需稽查员、第三⽅、众包等额外成本</div>
+                <div>竞争强烈，⻓期付费意愿不强</div>
+              </div>
             </div>
           </div>
-        </div>
+        </transition>
       </div>
       <div class="ruzhu-image">
         <div class="title">超商店长 入驻流程</div>
         <div class="items">
           <div class="item">
-            <img src="~assets/img/about_ico001.png" alt>
+            <transition name="bottom-fade">
+              <img src="~assets/img/about_ico001.png" v-if="show3">
+            </transition>
             <span>深度学习</span>
           </div>
           <div class="item">
-            <img src="~assets/img/about_ico002.png" alt>
+            <transition name="bottom-fade">
+              <img src="~assets/img/about_ico002.png" v-if="show3">
+            </transition>
             <span>机器视觉</span>
           </div>
           <div class="item">
-            <img src="~assets/img/about_ico003.png" alt>
+            <transition name="bottom-fade">
+              <img src="~assets/img/about_ico003.png" v-if="show3">
+            </transition>
             <span>数据科学</span>
           </div>
           <div class="item">
-            <img src="~assets/img/about_ico004.png" alt>
+            <transition name="bottom-fade">
+              <img src="~assets/img/about_ico004.png" v-if="show3">
+            </transition>
             <span>资金安全</span>
           </div>
         </div>
@@ -51,58 +63,74 @@
         <div class="box-title">主要功能</div>
         <div class="box-grid">
           <div class="grid-item">
-            <div class="icon">
-              <img src="~assets/img/about_ico005.png" alt>
-            </div>
+            <transition name="bottom-fade">
+              <div class="icon" v-if="show4">
+                <img src="~assets/img/about_ico005.png" alt>
+              </div>
+            </transition>
             <div class="title">AI智能图像识别</div>
 
             <div class="line-row"></div>
             <div class="line-column"></div>
           </div>
           <div class="grid-item">
-            <div class="icon">
-              <img src="~assets/img/about_ico006.png" alt>
-            </div>
+            <transition name="bottom-fade">
+              <div class="icon" v-if="show4">
+                <img src="~assets/img/about_ico006.png" alt>
+              </div>
+            </transition>
             <div class="title">智能云端</div>
 
             <div class="line-column"></div>
           </div>
           <div class="grid-item">
-            <div class="icon">
-              <img src="~assets/img/about_ico007.png" alt>
-            </div>
+            <transition name="bottom-fade">
+              <div class="icon" v-if="show4">
+                <img src="~assets/img/about_ico007.png" alt>
+              </div>
+            </transition>
             <div class="title">多终端适配 操作方便</div>
 
             <div class="line-column"></div>
           </div>
           <div class="grid-item">
-            <div class="icon">
-              <img src="~assets/img/about_ico008.png" alt>
-            </div>
+            <transition name="bottom-fade">
+              <div class="icon" v-if="show4">
+                <img src="~assets/img/about_ico008.png" alt>
+              </div>
+            </transition>
             <div class="title">货架、地堆均可识别</div>
           </div>
           <div class="grid-item">
-            <div class="icon">
-              <img src="~assets/img/about_ico009.png" alt>
-            </div>
+            <transition name="bottom-fade">
+              <div class="icon" v-if="show4">
+                <img src="~assets/img/about_ico009.png" alt>
+              </div>
+            </transition>
             <div class="title">多重核验 确保真实</div>
           </div>
           <div class="grid-item">
-            <div class="icon">
-              <img src="~assets/img/about_ico010.png" alt>
-            </div>
+            <transition name="bottom-fade">
+              <div class="icon" v-if="show4">
+                <img src="~assets/img/about_ico010.png" alt>
+              </div>
+            </transition>
             <div class="title">人工复验 申诉重审</div>
           </div>
           <div class="grid-item">
-            <div class="icon">
-              <img src="~assets/img/about_ico011.png" alt>
-            </div>
+            <transition name="bottom-fade">
+              <div class="icon" v-if="show4">
+                <img src="~assets/img/about_ico011.png" alt>
+              </div>
+            </transition>
             <div class="title">报表统计 清晰全面</div>
           </div>
           <div class="grid-item">
-            <div class="icon">
-              <img src="~assets/img/about_ico012.png" alt>
-            </div>
+            <transition name="bottom-fade">
+              <div class="icon" v-if="show4">
+                <img src="~assets/img/about_ico012.png" alt>
+              </div>
+            </transition>
             <div class="title">未来可扩展性</div>
           </div>
         </div>
@@ -152,7 +180,11 @@ export default {
       }, {
         id: 4,
         name: '其他'
-      },]
+      },],
+      show1: false,
+      show2: false,
+      show3: false,
+      show4: false,
     }
   },
   components: {
@@ -164,11 +196,36 @@ export default {
     onSubmit () {
       console.log(this.form)
     },
+    handleScroll () {
+      var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      let height = document.documentElement.clientHeight
+      console.log("滚动距离" + scrollTop);
+      if (scrollTop > 500) {
+        this.show2 === false && (this.show2 = true)
+      }
+      if (scrollTop > height / 2 + 500) {
+        this.show3 === false && (this.show3 = true)
+      }
+      if (scrollTop > height / 2 + 500 + 550) {
+        this.show4 === false && (this.show4 = true)
+      }
+
+    },
+  },
+  mounted () {
+    this.show1 = true
+    this.handleScroll();
+    window.addEventListener('scroll', this.handleScroll)
+  },
+
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll)
   },
 }
 </script>
 
 <style lang="less">
+@import "../assets/less/translate.less";
 .ruzhu-container {
   margin: 0 auto;
   .ruzhu-ad {
