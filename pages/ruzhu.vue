@@ -104,31 +104,7 @@
         <div class="forms">
           <div class="form">
             <div class="label">门店位置</div>
-            <div class="address">
-              <component-select
-                :model="form.province"
-                :options="options1"
-                @onselect="(val)=>form.province=val"
-                placeholder="请选择省"
-              />
-              <component-select
-                :model="form.city"
-                :options="options2"
-                @onselect="(val)=>form.city=val"
-                placeholder="请选择市"
-              />
-              <component-select
-                :model="form.area"
-                :options="options3"
-                @onselect="(val)=>form.area=val"
-                placeholder="请选择区"
-              />
-              <component-input
-                :model="form.address"
-                @oninput="(val)=>form.address=val"
-                placeholder="请输入详细地址"
-              />
-            </div>
+            <component-city-picker @onchange="(obj)=>city=obj"/>
           </div>
           <div class="form-areage">
             <div class="form">
@@ -176,17 +152,15 @@
 import ComponentButton from '@/components/Button'
 import ComponentInput from '@/components/Input'
 import ComponentSelect from '@/components/Select'
+import ComponentCityPicker from '@/components/CityPicker'
 import pic002 from '@/assets/img/entering_pic002.jpg'
 import pic003 from '@/assets/img/entering_pic003.jpg'
 import pic004 from '@/assets/img/entering_pic004.jpg'
 export default {
   data () {
     return {
+      city: {},
       form: {
-        province: '',
-        city: '',
-        area: '',
-        address: '',
         acreage: '',
         name: '',
         number: ''
@@ -201,9 +175,9 @@ export default {
         id: 2,
         path: pic004
       },],
-      options1: [{ name: '辽宁省' }],
-      options2: [{ name: '沈阳市' }],
-      options3: [{ name: '和平区' }, { name: '沈河区' }, { name: '于洪区' }, { name: '浑南区' }, { name: '沈北区' },],
+      // options1: [{ name: '辽宁省' }],
+      // options2: [{ name: '沈阳市' }],
+      // options3: [{ name: '和平区' }, { name: '沈河区' }, { name: '于洪区' }, { name: '浑南区' }, { name: '沈北区' },],
       show1: false,
       show2: false,
       show3: false,
@@ -213,7 +187,8 @@ export default {
   components: {
     ComponentButton,
     ComponentInput,
-    ComponentSelect
+    ComponentSelect,
+    ComponentCityPicker
   },
   methods: {
     onSubmit () {

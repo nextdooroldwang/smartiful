@@ -6,8 +6,8 @@
       <div
         class="item"
         v-for="item in options"
-        :key="item.id"
-        @click="onselect(item.name)"
+        :key="item.key"
+        @click="onselect(item)"
       >{{item.name}}</div>
     </div>
   </div>
@@ -89,7 +89,8 @@ export default {
   .options {
     width: 100%;
     position: absolute;
-
+    max-height: 200px;
+    overflow: auto;
     left: 0;
     top: 52px;
     background: #fff;

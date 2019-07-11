@@ -305,7 +305,7 @@
               <component-select
                 :model="form.classify"
                 :options="options"
-                @onselect="(val)=>form.classify=val"
+                @onselect="(val)=>form.classify=val.name"
                 placeholder="请选择品牌类型"
               />
             </div>
