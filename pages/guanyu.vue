@@ -237,18 +237,18 @@ export default {
     padding: 44vh 0 0 20vw;
     .swiper-text {
       .text1 {
-        font-size: 84px;
+        font-size: 3.111111111111111rem;
         font-family: PingFangSC-Regular;
         font-weight: bold;
         color: rgba(255, 255, 255, 1);
-        line-height: 60px;
+        line-height: 2.2222222222222223rem;
       }
       .text2 {
-        font-size: 48px;
+        font-size: 1.7777777777777777rem;
         font-family: PingFangSC-Regular;
         font-weight: 400;
         color: rgba(255, 255, 255, 1);
-        line-height: 82px;
+        line-height: 3.037037037037037rem;
       }
     }
   }
@@ -304,31 +304,35 @@ export default {
     }
     .ruzhu-image {
       width: 100%;
-      height: 547px;
+      height: 20.25925925925926rem;
       background: #ff8900;
       display: grid;
-      grid-template-rows: 152px 1fr;
+      grid-template-rows: 5.62962962962963rem 1fr;
       justify-items: center;
       justify-content: center;
+      img {
+        width: 8.962962962962964rem;
+        height: 9.185185185185185rem;
+      }
       .title {
         align-self: center;
-        font-size: 42px;
+        font-size: 1.5555555555555556rem;
         font-family: PingFangSC-Regular;
         font-weight: 400;
         color: rgba(255, 255, 255, 1);
       }
       .items {
-        width: 1180px;
+        width: 43.7037037037037rem;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         justify-content: space-evenly;
         .item {
           display: grid;
-          grid-template-rows: 248px 1fr;
+          grid-template-rows: 9.185185185185185rem 1fr;
           justify-items: center;
           span {
             display: block;
-            font-size: 28px;
+            font-size: 1.037037037037037rem;
             font-family: PingFangSC-Regular;
             font-weight: 400;
             color: rgba(255, 255, 255, 1);
@@ -337,12 +341,12 @@ export default {
       }
     }
     .box {
-      height: 681px;
+      height: 25.22222222222222rem;
       display: grid;
       justify-items: center;
-      grid-template-rows: 93px 1fr;
+      grid-template-rows: 3.4444444444444446rem 1fr;
       .box-title {
-        font-size: 42px;
+        font-size: 1.5555555555555556rem;
         font-family: PingFangSC-Regular;
         font-weight: 400;
         color: rgba(255, 137, 0, 1);
@@ -350,8 +354,8 @@ export default {
         align-self: center;
       }
       .box-grid {
-        width: 1180px;
-        height: 586px;
+        width: 43.7037037037037rem;
+        height: 21.703703703703702rem;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
@@ -362,8 +366,8 @@ export default {
           justify-content: center;
           position: relative;
           .line-row {
-            width: 1180px;
-            height: 2px;
+            width: 43.7037037037037rem;
+            height: 0.07407407407407407rem;
             background: linear-gradient(
               to right,
               rgba(222, 222, 222, 0.1),
@@ -371,12 +375,12 @@ export default {
               rgba(222, 222, 222, 0.1)
             );
             position: absolute;
-            bottom: -1px;
+            bottom: -0.037037037037037035rem;
             left: 0;
           }
           .line-column {
-            width: 2px;
-            height: 586px;
+            width: 0.07407407407407407rem;
+            height: 21.703703703703702rem;
             background: linear-gradient(
               rgba(222, 222, 222, 0.1),
               rgba(222, 222, 222),
@@ -384,28 +388,28 @@ export default {
             );
             position: absolute;
             top: 0;
-            right: -1px;
+            right: -0.037037037037037035rem;
           }
           .icon {
-            height: 98px;
+            height: 3.6296296296296298rem;
             text-align: center;
             img {
               height: 100%;
             }
           }
           .title {
-            font-size: 24px;
+            font-size: 0.8888888888888888rem;
             font-family: PingFangSC-Regular;
             font-weight: 400;
             color: rgba(124, 124, 124, 1);
             text-align: center;
-            padding-bottom: 22px;
+            padding-bottom: 0.8148148148148148rem;
           }
           .sub-title {
             span {
               display: block;
               text-align: center;
-              font-size: 16px;
+              font-size: 0.5925925925925926rem;
               font-family: PingFangSC-Regular;
               font-weight: 400;
               color: rgba(124, 124, 124, 1);
@@ -414,12 +418,13 @@ export default {
         }
       }
     }
+
     .photo {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 49px;
-      margin-top: 116px;
+      margin-bottom: 1.8148148148148149rem;
+      margin-top: 4.296296296296297rem;
     }
   }
 }

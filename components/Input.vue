@@ -34,13 +34,13 @@ export default {
 <style lang="less" scoped>
 .component-input {
   width: 100%;
-  height: 54px;
+  height: 2rem;
   background: rgba(255, 137, 0, 0);
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 27px;
   display: flex;
   align-items: center;
-  padding: 10px 24px;
+  padding: 0.37037037037037035rem 0.8888888888888888rem;
   &:hover {
     border: 2px solid rgba(255, 255, 255, 0.8);
     cursor: text;
@@ -51,7 +51,7 @@ export default {
     outline: none;
     width: 100%;
     height: 100%;
-    font-size: 18px;
+    font-size: 0.6666666666666666rem;
     font-family: PingFangSC-Regular;
     font-weight: 400;
     color: rgba(255, 209, 130, 1);

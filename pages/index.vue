@@ -60,6 +60,7 @@
             </div>
           </div>
         </div>
+
         <div class="mart">
           <div class="title">
             <span>集合</span>
@@ -163,17 +164,18 @@ export default {
 <style lang="less">
 .index-container {
   margin: 0 auto;
+
   .swiper-container-horizontal
     > .swiper-pagination-bullets
     .swiper-pagination-bullet {
-    margin: 0 12px;
-    width: 14px;
-    height: 14px;
+    margin: 0 0.4444444444444444rem;
+    width: 0.5185185185185185rem;
+    height: 0.5185185185185185rem;
   }
   .swiper-container:first-child {
     height: calc(100vh + 46px);
     .swiper-pagination {
-      margin-bottom: 103px;
+      margin-bottom: 3.814814814814815rem;
     }
 
     .swiper-pagination-bullet-active {
@@ -185,28 +187,28 @@ export default {
     }
     .swiper-text {
       position: absolute;
-      top: 53%;
-      left: 18vw;
+      top: 20.64rem;
+      left: 14rem;
       z-index: 888;
       .text1 {
-        font-size: 76px;
+        font-size: 2.815rem;
         font-family: PingFangSC-Regular;
         font-weight: bold;
         color: rgba(255, 255, 255, 1);
-        line-height: 76px;
+        line-height: 2.815rem;
       }
       .text2 {
-        font-size: 60px;
+        font-size: 2.22rem;
         font-family: PingFangSC-Regular;
         font-weight: 400;
         color: rgba(255, 255, 255, 1);
-        line-height: 60px;
+        line-height: 2.22rem;
         margin: 20px 0;
       }
       .btns {
-        margin-top: 48px;
+        margin-top: 1.78rem;
         div {
-          margin: 0 12px;
+          margin: 0 0.44rem;
         }
       }
     }

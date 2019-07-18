@@ -49,30 +49,30 @@ export default {
     padding: 44vh 0 0 20vw;
     .swiper-text {
       .text1 {
-        font-size: 80px;
+        font-size: 2.962962962962963rem;
         font-family: PingFangSC-Regular;
         font-weight: bold;
         color: rgba(255, 255, 255, 1);
-        line-height: 102px;
+        line-height: 3.7777777777777777rem;
       }
       .text2 {
-        font-size: 42px;
+        font-size: 1.5555555555555556rem;
         font-family: PingFangSC-Regular;
         font-weight: 400;
         color: rgba(255, 255, 255, 1);
-        line-height: 60px;
+        line-height: 2.2222222222222223rem;
       }
       .text3 {
-        font-size: 24px;
+        font-size: 0.8888888888888888rem;
         font-family: PingFangSC-Regular;
         font-weight: 400;
         color: rgba(255, 255, 255, 1);
-        line-height: 24px;
-        margin: 30px 0 80px 0;
+        line-height: 0.8888888888888888rem;
+        margin: 1.1111111111111112rem 0 2.962962962962963rem 0;
       }
       .btns {
         div {
-          margin: 0 12px;
+          margin: 0 0.4444444444444444rem;
         }
       }
     }

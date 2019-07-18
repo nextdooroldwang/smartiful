@@ -46,14 +46,14 @@ export default {
 <style lang="less" scoped>
 .component-select {
   width: 100%;
-  height: 54px;
+  height: 2rem;
   background: rgba(255, 137, 0, 0);
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 27px;
   display: flex;
   align-items: center;
   position: relative;
-  padding: 10px 24px;
+  padding: 0.37037037037037035rem 0.8888888888888888rem;
   &:hover {
     border: 2px solid rgba(255, 255, 255, 0.8);
     cursor: pointer;
@@ -65,7 +65,7 @@ export default {
     outline: none;
     width: 100%;
     height: 100%;
-    font-size: 18px;
+    font-size: 0.6666666666666666rem;
     font-family: PingFangSC-Regular;
     font-weight: 400;
     color: rgba(255, 209, 130, 1);
@@ -89,20 +89,20 @@ export default {
   .options {
     width: 100%;
     position: absolute;
-    max-height: 200px;
+    max-height: 7.407407407407407rem;
     overflow: auto;
     left: 0;
-    top: 52px;
+    top: 1.9259259259259258rem;
     background: #fff;
-    padding: 8px;
+    padding: 0.2962962962962963rem;
     border-radius: 8px;
     .item {
       width: 100%;
-      height: 48px;
+      height: 1.7777777777777777rem;
       color: #ff8900;
-      line-height: 48px;
-      font-size: 18px;
-      padding: 0 24px;
+      line-height: 1.7777777777777777rem;
+      font-size: 0.6666666666666666rem;
+      padding: 0 0.8888888888888888rem;
       &:hover {
         background: #ff8900;
         color: #fff;

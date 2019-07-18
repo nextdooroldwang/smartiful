@@ -134,15 +134,10 @@
       <div class="stairs">
         <div class="stair">
           <transition name="right-fade">
-            <img
-              width="485px"
-              height="461px"
-              src="~assets/img/brand_illustration_01.jpg"
-              v-if="show4"
-            >
+            <img src="~assets/img/brand_illustration_01.jpg" v-if="show4">
           </transition>
           <transition name="left-fade">
-            <div class="text" style="width:528px" v-if="show4">
+            <div class="text" v-if="show4">
               <div class="title">商品识别</div>
               <div class="sub">
                 <div class="sub-title">数字化货架与数据采集</div>
@@ -157,7 +152,7 @@
         </div>
         <div class="stair">
           <transition name="right-fade">
-            <div class="text" style="width:600px" v-if="show5">
+            <div class="text" v-if="show5">
               <div class="title">货架管理</div>
               <div class="sub">
                 <div class="sub-title">迅速了解货架状况</div>
@@ -176,25 +171,15 @@
             </div>
           </transition>
           <transition name="left-fade">
-            <img
-              width="485px"
-              height="461px"
-              src="~assets/img/brand_illustration_02.jpg"
-              v-if="show5"
-            >
+            <img src="~assets/img/brand_illustration_02.jpg" v-if="show5">
           </transition>
         </div>
         <div class="stair">
           <transition name="right-fade">
-            <img
-              width="485px"
-              height="461px"
-              src="~assets/img/brand_illustration_03.jpg"
-              v-if="show6"
-            >
+            <img src="~assets/img/brand_illustration_03.jpg" v-if="show6">
           </transition>
           <transition name="left-fade">
-            <div class="text" style="width:532px" v-if="show6">
+            <div class="text" v-if="show6">
               <div class="title">大数据</div>
               <div class="sub">
                 <div class="sub-title">全市场品类分析</div>
@@ -212,7 +197,7 @@
         </div>
         <div class="stair">
           <transition name="right-fade">
-            <div class="text" style="width:534px" v-if="show7">
+            <div class="text" v-if="show7">
               <div class="title">管理面板</div>
               <div class="sub">
                 <div class="sub-title">洞察⼤局</div>
@@ -221,25 +206,15 @@
             </div>
           </transition>
           <transition name="left-fade">
-            <img
-              width="485px"
-              height="461px"
-              src="~assets/img/brand_illustration_04.jpg"
-              v-if="show7"
-            >
+            <img src="~assets/img/brand_illustration_04.jpg" v-if="show7">
           </transition>
         </div>
         <div class="stair">
           <transition name="right-fade">
-            <img
-              width="485px"
-              height="461px"
-              src="~assets/img/brand_illustration_03.jpg"
-              v-if="show8"
-            >
+            <img src="~assets/img/brand_illustration_03.jpg" v-if="show8">
           </transition>
           <transition name="left-fade">
-            <div class="text" style="width:592px" v-if="show8">
+            <div class="text" v-if="show8">
               <div class="title">防⽌造假</div>
               <div class="sub">
                 <div class="sub-title">开通地理位置</div>
@@ -263,7 +238,7 @@
       <div class="ad">
         <div class="stair">
           <transition name="right-fade">
-            <div class="text" style="width:598px;marginRight:29px" v-if="show9">
+            <div class="text" v-if="show9">
               <div class="title">
                 <div>"卖更多"平台代发品牌陈列费</div>
                 <div>KPI绩效管理、多维度管控</div>
@@ -284,12 +259,7 @@
             </div>
           </transition>
           <transition name="left-fade">
-            <img
-              width="574px"
-              height="677px"
-              src="~assets/img/brand_illustration_06.jpg"
-              v-if="show9"
-            >
+            <img src="~assets/img/brand_illustration_06.jpg" v-if="show9">
           </transition>
         </div>
       </div>
@@ -441,7 +411,7 @@ export default {
   min-height: 100vh;
   .jiameng-ad {
     width: 100%;
-    height: calc(100vh + 123px);
+    height: calc(100vh + 4.555rem);
     background-image: url("~assets/img/brand_pic001.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -449,23 +419,23 @@ export default {
 
     .swiper-text {
       .text1 {
-        font-size: 70px;
+        font-size: 2.6rem;
         font-family: PingFangSC-Regular;
         font-weight: bold;
         color: rgba(255, 255, 255, 1);
-        line-height: 84px;
+        line-height: 3.1rem;
       }
       .text2 {
-        font-size: 48px;
+        font-size: 1.77rem;
         font-family: PingFangSC-Regular;
         font-weight: 400;
         color: rgba(255, 255, 255, 1);
-        line-height: 48px;
-        margin: 20px 0 33px 0;
+        line-height: 1.77rem;
+        margin: 0.7407407407407407rem 0 1.2222222222222223rem 0;
       }
       .btns {
         div {
-          margin: 0 12px;
+          margin: 0 0.444rem;
         }
       }
     }
@@ -475,9 +445,9 @@ export default {
     position: relative;
     .card {
       width: 100%;
-      height: 522px;
+      height: 19.333rem;
       position: absolute;
-      top: -174px;
+      top: -6.444rem;
       display: flex;
       justify-content: center;
 
@@ -489,18 +459,18 @@ export default {
       background-image: url("~assets/img/brand_bg_01.jpg");
       background-repeat: no-repeat;
       background-size: 100% 100%;
-      height: 1104px;
+      height: 40.888rem;
       display: grid;
       align-items: end;
       justify-items: center;
-      padding-bottom: 128px;
+      padding-bottom: 47.4rem;
       .box-grid {
-        width: 1180px;
-        height: 586px;
+        width: 43.7rem;
+        height: 21.7rem;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        margin-top: 390px;
+        margin-top: 14.4rem;
         .grid-item {
           display: flex;
           flex-direction: column;
@@ -508,7 +478,7 @@ export default {
           justify-content: center;
           position: relative;
           .line-row {
-            width: 1180px;
+            width: 43.7rem;
             height: 2px;
             background: linear-gradient(
               to right,
@@ -522,7 +492,7 @@ export default {
           }
           .line-column {
             width: 2px;
-            height: 586px;
+            height: 21.7rem;
             background: linear-gradient(
               rgba(255, 137, 0, 0.1),
               rgba(255, 137, 0),
@@ -533,25 +503,25 @@ export default {
             right: -1px;
           }
           .icon {
-            height: 98px;
+            height: 3.6rem;
             text-align: center;
             img {
               height: 100%;
             }
           }
           .title {
-            font-size: 24px;
+            font-size: 0.888rem;
             font-family: PingFangSC-Regular;
             font-weight: 400;
             color: rgba(124, 124, 124, 1);
             text-align: center;
-            padding-bottom: 22px;
+            padding-bottom: 0.81rem;
           }
           .sub-title {
             span {
               display: block;
               text-align: center;
-              font-size: 16px;
+              font-size: 0.59rem;
               font-family: PingFangSC-Regular;
               font-weight: 400;
               color: rgba(124, 124, 124, 1);
@@ -564,30 +534,35 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 1000px;
+      min-height: 37rem;
       .stair {
         display: flex;
-        width: 1180px;
+        width: 43.7rem;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 35px;
+        margin-bottom: 1.296rem;
+        img {
+          width: 17.962962962962962rem;
+          height: 17.074074074074073rem;
+        }
         .text {
+          width: 22.2222222222rem;
           .title {
-            font-size: 42px;
+            font-size: 1.5555555555555556rem;
             font-family: PingFangSC-Regular;
             font-weight: 400;
             color: rgba(255, 137, 0, 1);
           }
           .sub {
-            margin-top: 44px;
+            margin-top: 1.6296296296296295rem;
             .sub-title {
-              font-size: 24px;
+              font-size: 0.8888888888888888rem;
               font-family: PingFangSC-Regular;
               font-weight: bold;
               color: rgba(124, 124, 124, 1);
             }
             .sub-text {
-              font-size: 16px;
+              font-size: 0.5925925925925926rem;
               font-family: PingFangSC-Regular;
               font-weight: 400;
               color: rgba(124, 124, 124, 1);
@@ -600,16 +575,23 @@ export default {
       background-image: url("~assets/img/brand_bg_02.jpg");
       background-repeat: no-repeat;
       background-size: 100% 100%;
-      height: 1022px;
+      height: 37.851851851851855rem;
       display: grid;
       align-items: center;
       .stair {
         display: flex;
         align-items: center;
         justify-content: center;
+        img {
+          width: 21.25925925925926rem;
+          height: 25.074074074074073rem;
+        }
         .text {
+          width: 22.14814814814815rem;
+          margin-right: 1.0740740740740742rem;
+
           .title {
-            font-size: 42px;
+            font-size: 1.5555rem;
             font-family: PingFangSC-Regular;
             font-weight: 400;
             color: rgba(255, 137, 0, 1);
@@ -618,16 +600,16 @@ export default {
             }
           }
           .sub {
-            margin-top: 44px;
+            margin-top: 1.6296296296296295rem;
             .sub-title {
-              font-size: 24px;
+              font-size: 0.8888888888888888rem;
               font-family: PingFangSC-Regular;
               font-weight: bold;
               color: rgba(124, 124, 124, 1);
-              margin-bottom: 79px;
+              margin-bottom: 2.925925925925926rem;
             }
             .sub-text {
-              font-size: 16px;
+              font-size: 0.5925925925925926rem;
               font-family: PingFangSC-Regular;
               font-weight: 400;
               color: rgba(124, 124, 124, 1);
@@ -637,42 +619,42 @@ export default {
       }
     }
     .join {
-      height: 663px;
+      height: 24.555555555555557rem;
       background-image: url("~assets/img/entering_bg.png");
       background-repeat: no-repeat;
       background-size: 100% 100%;
       display: grid;
       justify-items: center;
       align-items: center;
-      grid-template-rows: 188px 1fr 165px 80px;
+      grid-template-rows: 6.962962962962963rem 1fr 6.111111111111111rem 2.962962962962963rem;
       position: relative;
       .title {
-        font-size: 42px;
+        font-size: 1.5555rem;
         font-family: PingFangSC-Regular;
         font-weight: 400;
         color: rgba(255, 255, 255, 1);
         text-align: center;
       }
       .forms {
-        width: 925px;
+        width: 34.25925925925926rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        grid-row-gap: 20px;
+        grid-row-gap: 0.7407407407407407rem;
         .label {
-          font-size: 24px;
+          font-size: 0.8888888888888888rem;
           font-family: PingFangSC-Regular;
           font-weight: 400;
           color: rgba(255, 255, 255, 1);
-          margin-bottom: 25px;
+          margin-bottom: 0.9259259259259259rem;
         }
         .form-box {
-          width: 443px;
+          width: 16.40740740740741rem;
         }
       }
       .tips {
         text-align: center;
-        font-size: 22px;
+        font-size: 0.8148148148148148rem;
         font-family: PingFangSC-Regular;
         font-weight: 400;
         color: rgba(255, 209, 130, 1);

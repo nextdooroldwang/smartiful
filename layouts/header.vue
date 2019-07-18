@@ -79,15 +79,16 @@ export default {
 <style lang="less" scoped>
 .header-container {
   width: 100%;
-  height: 80px;
+  height: 3.2rem;
   display: flex;
   justify-content: center;
   position: absolute;
   z-index: 9999;
   left: 0;
-  top: 41px;
+  top: 1.64rem;
   .header-main {
-    width: 1180px;
+    width: 47.2rem;
+    min-width: 960px;
     height: 100%;
     display: flex;
     justify-content: flex-start;
@@ -98,14 +99,14 @@ export default {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      font-size: 20px;
+      font-size: 0.8rem;
       font-family: PingFangSC-Regular;
       font-weight: 400;
       color: rgba(255, 255, 255, 1);
-      margin-left: 137px;
+      margin-left: 5.48rem;
       .menu-item {
-        padding: 11px 4px;
-        margin-right: 61px;
+        padding: 0.44rem 0.16rem;
+        margin-right: 2.44rem;
         position: relative;
         &:hover {
           cursor: pointer;
@@ -114,10 +115,10 @@ export default {
       }
       .border {
         width: 0;
-        height: 3px;
+        height: 0.12rem;
         position: absolute;
         left: 0;
-        bottom: -3px;
+        bottom: -0.12rem;
         background: rgba(255, 255, 255, 1);
       }
       .border-active {
@@ -127,16 +128,16 @@ export default {
     }
     .download {
       text-align: center;
-      font-size: 20px;
+      font-size: 0.8rem;
       font-family: PingFangSC-Regular;
       font-weight: 400;
       color: rgba(255, 255, 255, 1);
-      width: 160px;
-      height: 43px;
-      line-height: 43px;
+      width: 6.4rem;
+      height: 1.72rem;
+      line-height: 1.72rem;
       background: rgb(237, 96, 10, 1);
-      border-radius: 21px;
-      box-shadow: 0 0 10px rgb(243, 199, 5);
+      border-radius: 0.84rem;
+      box-shadow: 0 0 0.4rem rgb(243, 199, 5);
       &:hover {
         cursor: pointer;
         color: rgba(255, 255, 255, 0.8);

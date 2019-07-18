@@ -1,0 +1,30 @@
+/*最大屏幕分辨率为1280px*/
+@media screen and (max-width: 1280px) {
+	html {
+		font-size: 14px;
+	}
+}
+/*最小屏幕分辨率为1280px且最大为1440px*/
+@media (min-width: 1280px) and (max-width: 1440px) {
+	html {
+		font-size: 16px;
+	}
+}
+/*最小屏幕分辨率为1440px且最大为1680px*/
+@media (min-width: 1440px) and (max-width: 1680px) {
+	html {
+		font-size: 22px;
+	}
+}
+/*最小屏幕分辨率为1440px且最大为1680px*/
+@media (min-width: 1680px) and (max-width: 1920px) {
+	html {
+		font-size: 25px;
+	}
+}
+/*最小屏幕分辨率为1920px*/
+@media screen and (min-width: 1920px) {
+	html {
+		font-size: 27px;
+	}
+}

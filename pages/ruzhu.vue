@@ -63,10 +63,10 @@
       <div class="photo">
         <div class="stair">
           <transition name="right-fade">
-            <img width="598px" height="591px" src="~assets/img/entering_pic006.jpg" v-if="show4">
+            <img src="~assets/img/entering_pic006.jpg" v-if="show4">
           </transition>
           <transition name="left-fade">
-            <div class="text" style="width:537px" v-if="show4">
+            <div class="text" v-if="show4">
               <div class="sub">
                 <div class="sub-text">
                   1、只需要一部手机登录“卖更多”平台，一键拍照，极简的操作步骤和拍照上
@@ -235,22 +235,22 @@ export default {
     padding: 44vh 0 0 20vw;
     .swiper-text {
       .text1 {
-        font-size: 70px;
+        font-size: 2.5925925925925926rem;
         font-family: PingFangSC-Regular;
         font-weight: bold;
         color: rgba(255, 255, 255, 1);
-        line-height: 70px;
+        line-height: 2.5925925925925926rem;
       }
       .text2 {
-        font-size: 46px;
+        font-size: 1.7037037037037037rem;
         font-family: PingFangSC-Regular;
         font-weight: 400;
         color: rgba(255, 255, 255, 1);
-        line-height: 60px;
+        line-height: 2.2222222222222223rem;
       }
       .btns {
         div {
-          margin: 45px 12px;
+          margin: 1.6666666666666667rem 0.4444444444444444rem;
         }
       }
     }
@@ -325,42 +325,48 @@ export default {
       justify-content: center;
       padding-left: 20vw;
       div {
-        font-size: 42px;
+        font-size: 1.5555555555555556rem;
         font-family: PingFangSC-Regular;
         font-weight: 400;
         color: rgba(255, 255, 255, 1);
       }
     }
     .photo {
-      min-height: 600px;
+      min-height: 22.22222222222222rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 49px;
-      margin-top: 116px;
+      margin-bottom: 1.8148148148148149rem;
+      margin-top: 4.296296296296297rem;
       .stair {
         display: flex;
-        width: 1180px;
+        width: 43.7037037037037rem;
         align-items: center;
-        justify-content: space-between;
-        margin-bottom: 35px;
+        justify-content: center;
+        margin-bottom: 1.2962962962962963rem;
+        img {
+          width: 22.14814814814815rem;
+          height: 21.88888888888889rem;
+          margin-right: 2rem;
+        }
         .text {
+          width: 19.88888888888889rem;
           .title {
-            font-size: 42px;
+            font-size: 1.5555555555555556rem;
             font-family: PingFangSC-Regular;
             font-weight: 400;
             color: rgba(255, 137, 0, 1);
           }
           .sub {
-            margin-top: 44px;
+            margin-top: 1.6296296296296295rem;
             .sub-title {
-              font-size: 24px;
+              font-size: 0.8888888888888888rem;
               font-family: PingFangSC-Regular;
               font-weight: bold;
               color: rgba(124, 124, 124, 1);
             }
             .sub-text {
-              font-size: 16px;
+              font-size: 0.5925925925925926rem;
               font-family: PingFangSC-Regular;
               font-weight: 400;
               color: rgba(124, 124, 124, 1);
@@ -374,62 +380,66 @@ export default {
       background-image: url("~assets/img/brand_bg_02.jpg");
       background-repeat: no-repeat;
       background-size: 100% 100%;
-      height: 1022px;
-      padding-top: 174px;
+      height: 37.851851851851855rem;
+      padding-top: 6.444444444444445rem;
       text-align: center;
       .title {
-        font-size: 42px;
+        font-size: 1.5555555555555556rem;
         font-family: PingFangSC-Regular;
         font-weight: 400;
         color: rgba(255, 137, 0, 1);
         text-align: center;
-        margin-bottom: 72px;
+        margin-bottom: 2.6666666666666665rem;
+      }
+      img {
+        width: 41.111111111111114rem;
+        height: 17.37037037037037rem;
       }
     }
     .join {
       width: 100%;
-      height: 663px;
+      height: 24.555555555555557rem;
       background-image: url("~assets/img/entering_bg.png");
       background-repeat: no-repeat;
       background-size: 100% 100%;
       display: grid;
       justify-items: center;
       align-items: center;
-      grid-template-rows: 188px 1fr 165px 80px;
+      grid-template-rows: 6.962962962962963rem 1fr 6.111111111111111rem 2.962962962962963rem;
       .title {
-        font-size: 42px;
+        font-size: 1.5555555555555556rem;
         font-family: PingFangSC-Regular;
         font-weight: 400;
         color: rgba(255, 255, 255, 1);
         text-align: center;
       }
       .forms {
-        width: 925px;
+        width: 34.25925925925926rem;
         display: grid;
         grid-template-rows: 1fr 1fr;
-        grid-row-gap: 20px;
+        grid-row-gap: 0.7407407407407407rem;
         .form-areage {
-          width: 925px;
+          width: 34.25925925925926rem;
           display: grid;
-          grid-template-columns: 256px 256px 1fr;
-          grid-column-gap: 20px;
+          grid-template-columns: 9.481481481481481rem 9.481481481481481rem 1fr;
+          grid-column-gap: 0.7407407407407407rem;
         }
         .label {
-          font-size: 24px;
+          font-size: 0.8888888888888888rem;
           font-family: PingFangSC-Regular;
           font-weight: 400;
           color: rgba(255, 255, 255, 1);
-          margin-bottom: 20px;
+          margin-bottom: 0.7407407407407407rem;
         }
         .address {
           display: grid;
-          grid-template-columns: 164px 164px 164px 1fr;
-          grid-column-gap: 24px;
+          grid-template-columns: 6.074074074074074rem 6.074074074074074rem 6.074074074074074rem 1fr;
+          grid-column-gap: 0.8888888888888888rem;
         }
       }
       .tips {
         text-align: center;
-        font-size: 22px;
+        font-size: 0.8148148148148148rem;
         font-family: PingFangSC-Regular;
         font-weight: 400;
         color: rgba(255, 209, 130, 1);
