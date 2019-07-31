@@ -111,8 +111,8 @@
               <div class="label">门店面积</div>
               <div>
                 <component-input
-                  :model="form.acreage"
-                  @oninput="(val)=>form.acreage=val"
+                  :model="form.area"
+                  @oninput="(val)=>form.area=val"
                   placeholder="请输入面积"
                 />
               </div>
@@ -131,8 +131,8 @@
               <div class="label">手机号码</div>
               <div>
                 <component-input
-                  :model="form.number"
-                  @oninput="(val)=>form.number=val"
+                  :model="form.phone"
+                  @oninput="(val)=>form.phone=val"
                   placeholder="请输入电话"
                 />
               </div>
@@ -161,9 +161,9 @@ export default {
     return {
       city: {},
       form: {
-        acreage: '',
+        area: '',
         name: '',
-        number: ''
+        phone: ''
       },
       marts: [{
         id: 0,
@@ -182,6 +182,7 @@ export default {
       show2: false,
       show3: false,
       show4: false,
+      state: true
     }
   },
   components: {
@@ -191,13 +192,26 @@ export default {
     ComponentCityPicker
   },
   methods: {
-    onSubmit () {
-      console.log(this.form)
+    async onSubmit () {
+      if (this.state) {
+        if (this.checkPhone(this.form.phone) && this.form.area && this.form.name && this.city.province && this.city.city && this.city.area && this.city.address) {
+          this.state = false
+          await this.postData('http://192.168.1.59:8184/shop', { ...this.form, province: this.city.province, city: this.city.city, region: this.city.area, address: this.city.address })
+            .then(data => {
+              alert('提交成功！')
+            }) // JSON from `response.json()` call
+            .catch(error => console.error(error))
+          setTimeout(() => {
+            this.state = true
+          }, 3000);
+        } else {
+          alert('请填写完整的信息和正确的手机号！')
+        }
+      }
     },
     handleScroll () {
       var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
       let height = document.documentElement.clientHeight
-      console.log("滚动距离" + scrollTop);
       if (scrollTop > 200) {
         this.show2 === false && (this.show2 = true)
       }
@@ -208,6 +222,23 @@ export default {
         this.show4 === false && (this.show4 = true)
       }
 
+    },
+    checkPhone (phone) {
+      if (!(/^1[3456789]\d{9}$/.test(phone))) {
+        return false;
+      }
+      return true
+    },
+    postData (url, data) {
+      // Default options are marked with *
+      return fetch(url, {
+        body: JSON.stringify(data), // must match 'Content-Type' header
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          'content-type': 'application/json'
+        },
+      })
+        .then(response => response.json()) // parses response to JSON
     },
   },
   mounted () {
@@ -433,7 +464,7 @@ export default {
         }
         .address {
           display: grid;
-          grid-template-columns: 6.074074074074074rem 6.074074074074074rem 6.074074074074074rem 1fr;
+          grid-template-columns: 9.481481481481481rem 6.074074074074074rem 6.074074074074074rem 1fr;
           grid-column-gap: 0.8888888888888888rem;
         }
       }

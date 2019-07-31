@@ -23,43 +23,44 @@
 </template>
 
 <script>
-let citys = [{
-  key: '1001',
-  name: '辽宁省',
-  children: [{
-    key: '10011',
-    name: '沈阳市',
-    children: [{
-      key: '100111',
-      name: '和平区'
-    }, {
-      key: '100112',
-      name: '于洪区'
-    }, {
-      key: '100113',
-      name: '浑南区'
-    },]
-  }, {
-    key: '10012',
-    name: '大连市',
-    children: [{
-      key: '100121',
-      name: '大连1区'
-    }, {
-      key: '100122',
-      name: '大连2区'
-    }, {
-      key: '100123',
-      name: '大连3区'
-    },]
-  }]
-}, {
-  key: '1002',
-  name: '吉林省'
-}, {
-  key: '1003',
-  name: '黑龙江省'
-}]
+import citys from '@/utils/city'
+// let citys = [{
+//   key: '1001',
+//   name: '辽宁省',
+//   children: [{
+//     key: '10011',
+//     name: '沈阳市',
+//     children: [{
+//       key: '100111',
+//       name: '和平区'
+//     }, {
+//       key: '100112',
+//       name: '于洪区'
+//     }, {
+//       key: '100113',
+//       name: '浑南区'
+//     },]
+//   }, {
+//     key: '10012',
+//     name: '大连市',
+//     children: [{
+//       key: '100121',
+//       name: '大连1区'
+//     }, {
+//       key: '100122',
+//       name: '大连2区'
+//     }, {
+//       key: '100123',
+//       name: '大连3区'
+//     },]
+//   }]
+// }, {
+//   key: '1002',
+//   name: '吉林省'
+// }, {
+//   key: '1003',
+//   name: '黑龙江省'
+// }]
 import ComponentSelect from '@/components/Select'
 import ComponentInput from '@/components/Input'
 export default {

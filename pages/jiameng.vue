@@ -273,9 +273,9 @@
             <div class="label">品牌类型</div>
             <div class="form-box">
               <component-select
-                :model="form.classify"
+                :model="form.type"
                 :options="options"
-                @onselect="(val)=>form.classify=val.name"
+                @onselect="(val)=>form.type=val.name"
                 placeholder="请选择品牌类型"
               />
             </div>
@@ -284,8 +284,8 @@
             <div class="label">品牌名称</div>
             <div class="form-box">
               <component-input
-                :model="form.brand"
-                @oninput="(val)=>form.brand=val"
+                :model="form.brand_name"
+                @oninput="(val)=>form.brand_name=val"
                 placeholder="请输入品牌名称"
               />
             </div>
@@ -328,8 +328,8 @@ export default {
   data () {
     return {
       form: {
-        classify: '',
-        brand: '',
+        type: '',
+        brand_name: '',
         name: '',
         phone: ''
       },
@@ -358,6 +358,7 @@ export default {
       show7: false,
       show8: false,
       show9: false,
+      state: true
     }
   },
   components: {
@@ -366,13 +367,45 @@ export default {
     ComponentSelect
   },
   methods: {
-    onSubmit () {
-      console.log(this.form)
+    async onSubmit () {
+      if (this.state) {
+        if (this.checkPhone(this.form.phone) && this.form.type && this.form.brand_name && this.form.name) {
+          this.state = false
+          await this.postData('http://192.168.1.59:8184/brand', this.form)
+            .then(data => {
+              alert('提交成功！')
+            })
+            .catch(error => console.error(error))
+          setTimeout(() => {
+            this.state = true
+          }, 3000);
+        } else {
+          alert('请填写完整的信息和正确的手机号！')
+        }
+      }
+
+
+    },
+    checkPhone (phone) {
+      if (!(/^1[3456789]\d{9}$/.test(phone))) {
+        return false;
+      }
+      return true
+    },
+    postData (url, data) {
+      // Default options are marked with *
+      return fetch(url, {
+        body: JSON.stringify(data), // must match 'Content-Type' header
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          'content-type': 'application/json'
+        },
+      })
+        .then(response => response.json()) // parses response to JSON
     },
     handleScroll () {
       var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
       let height = document.documentElement.clientHeight
-      console.log("滚动距离" + scrollTop);
       if (scrollTop > 10) {
         this.show2 === false && (this.show2 = true)
       }
