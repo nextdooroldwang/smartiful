@@ -196,7 +196,7 @@ export default {
       if (this.state) {
         if (this.checkPhone(this.form.phone) && this.form.area && this.form.name && this.city.province && this.city.city && this.city.area && this.city.address) {
           this.state = false
-          await this.postData('http://192.168.1.59:8184/shop', { ...this.form, province: this.city.province, city: this.city.city, region: this.city.area, address: this.city.address })
+          await this.postData('http://47.94.92.176:8184/shop', { ...this.form, province: this.city.province, city: this.city.city, region: this.city.area, address: this.city.address })
             .then(data => {
               alert('提交成功！')
             }) // JSON from `response.json()` call

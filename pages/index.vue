@@ -46,7 +46,7 @@
             <!-- <video-player ref="videoPlayer" :options="playerOptions"/> -->
             <video
               class="video-player"
-              src="https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
+              src="~assets/video.mp4"
               controls="controls"
             >您的浏览器不支持 video 标签。</video>
           </div>
@@ -288,6 +288,7 @@ export default {
           align-items: center;
           .video-player {
             width: 100%;
+            outline: none;
           }
         }
         .introduction-text {

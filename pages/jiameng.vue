@@ -371,7 +371,7 @@ export default {
       if (this.state) {
         if (this.checkPhone(this.form.phone) && this.form.type && this.form.brand_name && this.form.name) {
           this.state = false
-          await this.postData('http://192.168.1.59:8184/brand', this.form)
+          await this.postData('http://47.94.92.176:8184/brand', this.form)
             .then(data => {
               alert('提交成功！')
             })
