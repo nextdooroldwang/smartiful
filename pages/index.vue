@@ -48,6 +48,7 @@
               class="video-player"
               src="~assets/video.mp4"
               controls="controls"
+              :poster="vedioImg"
             >您的浏览器不支持 video 标签。</video>
           </div>
           <div class="introduction-text">
@@ -95,14 +96,17 @@ import pic006 from '@/assets/img/home_pic006.jpg'
 import pic002 from '@/assets/img/home_pic002.jpg'
 import pic003 from '@/assets/img/home_pic003.jpg'
 import pic004 from '@/assets/img/home_pic004.jpg'
+import vedioImg from '@/assets/img/video02.png'
 import ComponentButton from '@/components/Button'
 export default {
   data () {
     return {
+      vedioImg,
       banners: [
         pic001,
         pic005,
-        pic006
+        pic006,
+
       ],
       swiperOption: {
         loop: true,
@@ -288,6 +292,7 @@ export default {
           align-items: center;
           .video-player {
             width: 100%;
+            object-fit: fill;
             outline: none;
           }
         }

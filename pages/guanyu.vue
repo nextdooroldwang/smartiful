@@ -19,19 +19,23 @@
             <img src="~assets/img/about_pic002.png" alt>
             <div class="img-text-box">
               <div class="img-text1">
-                <div>⾼频率稳定的终端店⻓拍照。</div>
-                <div>无额外成本、代发陈列费，SaaS模式⻓期稳定</div>
+                <div>⾼频率稳定的终端店⻓每日货架拍照、节省督导巡店成本</div>
+                <div>智能算法评分制，为厂商准确代发陈列费直达终端店面</div>
               </div>
               <div class="img-text2">
-                <div>需稽查员、第三⽅、众包等额外成本</div>
-                <div>竞争强烈，⻓期付费意愿不强</div>
+                <div>我们让品牌客户在终端店面的督导与销售</div>
+                <div>全面节省成本及提升效率、让商品卖得更多</div>
               </div>
             </div>
           </div>
         </transition>
       </div>
       <div class="ruzhu-image">
-        <div class="title">超商店长 入驻流程</div>
+        <div class="title">
+          <div>以AI技术为核心</div>
+          <div>全面解决陈列督导难题</div>
+        </div>
+
         <div class="items">
           <div class="item">
             <transition name="bottom-fade">
@@ -256,14 +260,15 @@ export default {
     width: 100%;
     .compared {
       width: 100%;
-      height: 828px;
+      height: 33.12rem;
       display: grid;
-      grid-template-rows: 274px 1fr;
+      grid-template-rows: 10.96rem 1fr;
+
       align-items: center;
       justify-items: center;
       .title {
         div {
-          font-size: 42px;
+          font-size: 1.68rem;
           font-family: PingFangSC-Regular;
           font-weight: 400;
           color: rgba(255, 137, 0, 1);
@@ -273,18 +278,21 @@ export default {
       .img {
         align-self: flex-start;
         // display: grid;
-        width: 1180px;
+        width: 47.2rem;
         text-align: center;
         justify-items: center;
+        img {
+          width: 100%;
+        }
         .img-text-box {
           display: grid;
-          grid-template-columns: 410px 322px;
+          grid-template-columns: 18rem 13.68rem;
           justify-content: space-between;
-          padding: 61px 70px 0 40px;
+          padding: 2.44rem 1rem 0 0rem;
           .img-text1 {
             div {
               text-align: center;
-              font-size: 20px;
+              font-size: 0.7rem;
               font-family: PingFangSC-Regular;
               font-weight: 400;
               color: rgba(255, 137, 0, 1);
@@ -293,7 +301,7 @@ export default {
           .img-text2 {
             div {
               text-align: center;
-              font-size: 20px;
+              font-size: 0.7rem;
               font-family: PingFangSC-Regular;
               font-weight: 400;
               color: rgba(54, 54, 54, 1);
@@ -316,10 +324,14 @@ export default {
       }
       .title {
         align-self: center;
-        font-size: 1.5555555555555556rem;
+        font-size: 1.3rem;
         font-family: PingFangSC-Regular;
         font-weight: 400;
         color: rgba(255, 255, 255, 1);
+        div {
+          // line-height: 1.5rem;
+          text-align: center;
+        }
       }
       .items {
         width: 43.7037037037037rem;
