@@ -253,8 +253,6 @@ export default {
       }
     },
     go (to) {
-      // let height = document.documentElement.clientHeight
-      // document.documentElement.scrollTop = height
       document.getElementById(to).scrollIntoView({ behavior: "smooth" });
     }
   }
