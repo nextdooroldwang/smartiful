@@ -4,7 +4,7 @@ export default {
 	 ** Headers of the page
 	 */
 	head: {
-		title: '卖更多，新零售开创者',
+		title: 'Smartiful',
 		// title: process.env.npm_package_name || '卖更多，新零售开创者',
 		meta: [
 			{ charset: 'utf-8' },
@@ -20,11 +20,11 @@ export default {
 	/*
 	 ** Global CSS
 	 */
-	css: ['ant-design-vue/dist/antd.css', 'video.js/dist/video-js.css', 'swiper/dist/css/swiper.css'],
+	css: ['swiper/dist/css/swiper.css'],
 	/*
 	 ** Plugins to load before mounting the App
 	 */
-	plugins: ['@/plugins/antd-ui', { src: '@/plugins/vue-vedio', ssr: false }, { src: '@/plugins/swiper', ssr: false }],
+	plugins: [{ src: '@/plugins/swiper', ssr: false }],
 	/*
 	 ** Nuxt.js modules
 	 */

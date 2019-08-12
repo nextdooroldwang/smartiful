@@ -1,344 +1,543 @@
 <template>
   <div class="index-container">
-    <div v-swiper:mySwiper="swiperOption">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img :src="banners[0]">
-          <div class="swiper-text">
-            <div class="text1">B2S货架督导</div>
-            <div class="text2">让零售业更有效率的服务消费者</div>
-            <div class="btns">
-              <component-button value="品牌加盟" @onclick="$router.push({path:'/jiameng'})"/>
-              <component-button value="店长入驻" @onclick="$router.push({path:'/ruzhu'})"/>
-            </div>
-          </div>
+    <div class="menu-box">
+      <img src="~assets/img/logo.png" alt>
+      <div class="menu-items">
+        <div class="menu-item">
+          <div class="title">01 Services</div>
+          <div class="menu">ITサービス事業</div>
         </div>
-        <div class="swiper-slide">
-          <img :src="banners[2]">
-          <div class="swiper-text">
-            <div class="text2">B2S货架督导全生态平台</div>
-            <div class="text1">集合500万实体零售门店</div>
-            <div class="btns">
-              <component-button value="品牌加盟" @onclick="$router.push({path:'/jiameng'})"/>
-              <component-button value="店长入驻" @onclick="$router.push({path:'/ruzhu'})"/>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <img :src="banners[1]">
-          <div class="swiper-text">
-            <div class="text1">AI智能图像识别技术</div>
-            <div class="text2">品牌商直控终端，远程监控货架</div>
-            <div class="btns">
-              <component-button value="品牌加盟" @onclick="$router.push({path:'/jiameng'})"/>
-              <component-button value="店长入驻" @onclick="$router.push({path:'/ruzhu'})"/>
-            </div>
-          </div>
+        <div class="menu-item">
+          <div class="title">02 Product</div>
+          <div class="menu">コンサルティング事業</div>
         </div>
       </div>
-      <div class="swiper-pagination swiper-pagination-bullets"></div>
+      <div class="callme">
+        <span class="icon">
+          <img src="~assets/img/ico_chat.svg" alt>
+        </span>
+        <span class="text">無料でチャットカウンセリング</span>
+      </div>
+    </div>
+    <div class="ad">
+      <div class="callrouter">
+        <div class="callme">
+          <span class="icon">
+            <img src="~assets/img/ico_chat.svg" alt>
+          </span>
+          <span class="text">無料でチャットカウンセリング</span>
+        </div>
+        <span>クラウド構築からWeb / スマホアプリ開発、リリース後の運用サポートまで対応！</span>
+      </div>
     </div>
 
     <div class="content">
-      <div class="main">
-        <div class="introduction">
-          <div class="vedio-box">
-            <!-- <video-player ref="videoPlayer" :options="playerOptions"/> -->
-            <video
-              class="video-player"
-              src="~assets/video.mp4"
-              controls="controls"
-              :poster="vedioImg"
-            >您的浏览器不支持 video 标签。</video>
+      <div class="title">SERVICES</div>
+      <div class="service-items">
+        <div class="service-item">
+          <div class="title">ITサービス事業</div>
+          <div class="icon">
+            <img src="~assets/img/services.svg" alt>
           </div>
-          <div class="introduction-text">
-            <div class="text">
-              “卖更多”B2S（Brand to Store）货架督导平台，定位于快消品零售行业，基于深度学习的AI智能图像识别技术，帮助品牌解决在终端陈列展示上的各类疑难问题，让零售业更有【效率】的服务消费者。
-              “卖更多”集合线下500万家实体中小型连锁便利及微小终端零售门店，店长通过手机App快速拍摄品牌商的货架照片，上传至AI云端图像分析引擎，生成实时店内情况分析报告，并在瞬间同步到品牌商的企业管理平台，即实现了品牌商……
-            </div>
-            <div class="more-btn">
-              <span class="more" @click="$router.push({path:'/guanyu'})">更多介绍</span>
-            </div>
-          </div>
+          <div
+            class="text"
+          >蓄積された豊富なノウハウによって、高品質なITサービス（特にiOS&Androidアプリ）をオーダーメイドで開発いたします。当社の開発チームお客様と直接やり取りし、ご希望に沿った体験デザイン、設計、実装を行います。</div>
         </div>
-
-        <div class="mart">
-          <div class="title">
-            <span>集合</span>
-            <img width="186" height="95" src="~assets/img/home_text500.png" alt>
-            <span>万家实体零售店</span>
+        <div class="service-item">
+          <div class="title">コンサルティング事業</div>
+          <div class="icon">
+            <img src="~assets/img/product.svg" alt>
           </div>
-          <div v-swiper:mySecondSwiper="swiperOption2">
-            <div class="swiper-wrapper">
-              <div
-                class="swiper-slide"
-                v-for="item in marts"
-                :key="item.id"
-                :style="{borderRadius: '20px',backgroundImage:`url(${item.path})`}"
-              >
-                <div class="name-box">
-                  <div class="name">{{item.name}}</div>
-                  <div class="type">{{item.type}}</div>
-                </div>
+          <div class="text">モバイル開発・インターネット・IT事業についてのコンサルティングサービスで貴社の成長をサポートします。</div>
+        </div>
+        <div class="service-item">
+          <div class="title">オンラインビジネス事業</div>
+          <div class="icon">
+            <img src="~assets/img/callme.svg" alt>
+          </div>
+          <div
+            class="text"
+          >海外卸サイトから仕入れた商品を、インターネットを通じて販売する。お客様の生活・人生を豊かにするため、お客様の立場で考え、進歩し続ける努力を怠らない、より高品質、より安い商品の提供ができるように努力致します。</div>
+        </div>
+      </div>
+    </div>
+    <div class="qa">
+      <h2 class="title">よくあるご質問</h2>
+      <div class="qalist">
+        <div class="item">
+          <div>
+            <div class="q">
+              <img src="~assets/img/en-q.png" alt>自社のIT担当者がいません。本当に大丈夫ですか？
+            </div>
+            <div class="a">
+              <div class="title">
+                <img src="~assets/img/en-a.png" alt>はい、ご安心ください！
               </div>
+              <div
+                class="text"
+              >冠婚葬祭業やキックボクシングジム、ホームセンターなどIT専任の担当者がいない、エンドユーザーのお客様のサービス開発経験は数多くあります。プロジェクトマネージャーがしっかりプロジェクトを進行いたしますので、すべてお任せください！</div>
             </div>
           </div>
+          <div class="btn-box">
+            <img src="~assets/img/arrow_c.svg" alt>
+          </div>
         </div>
+      </div>
+    </div>
+    <div class="info">
+      <div class="title">
+        <h2>
+          まずは無料で
+          ご相談ください！
+        </h2>
+        <div class="sub">どのようなサービスを開発されたいか、お気軽にご要望をお聞かせください！チャットカウンセリング、またはご訪問にてご提案させていただきます。</div>
+      </div>
+      <div class="form">
+        <div class="input-box">
+          <div class="label">
+            <div>会社名</div>
+            <span class="tag">必须</span>
+          </div>
+          <div class="input" @click="$refs.input1.focus()">
+            <input
+              ref="input1"
+              :value="model1"
+              type="text"
+              class="real-input"
+              placeholder="会社名をご記入ください"
+            >
+          </div>
+        </div>
+        <div class="input-box">
+          <div class="label">
+            <div>お名前</div>
+            <span class="tag">必须</span>
+          </div>
+          <div class="input" @click="$refs.input2.focus()">
+            <input
+              ref="input2"
+              :value="model2"
+              type="text"
+              class="real-input"
+              placeholder="お名前をご記入ください"
+            >
+          </div>
+        </div>
+        <div class="input-box">
+          <div class="label">
+            <div>メールアドレス</div>
+            <span class="tag">必须</span>
+          </div>
+          <div class="input" @click="$refs.input3.focus()">
+            <input
+              ref="input3"
+              :value="model"
+              type="text"
+              class="real-input"
+              placeholder="メールアドレスをご記入ください"
+            >
+          </div>
+        </div>
+      </div>
+      <div class="send">
+        <div class="text">
+          <div class="text1">
+            <span class="href">個人情報の取り扱いについて、</span>
+            <span>ご同意の上ご送信ください。</span>
+          </div>
+          <div class="text2">個人情報の取り扱いについて同意して送信する</div>
+        </div>
+        <div class="submit">
+          <img src="~assets/img/ico_send.svg" alt>入力内容を送信する
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <img src="~assets/img/logo.png" alt>
+      <div>
+        <img src="~assets/img/address.svg" alt>東京都港区南青山2-2-15
+      </div>
+      <div>
+        <img src="~assets/img/mail.svg" alt>support@smartiful.jp
+      </div>
+      <div>
+        <img src="~assets/img/phone.svg" alt>+81 03-6868-5186
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import pic001 from '@/assets/img/home_pic001.jpg'
-import pic005 from '@/assets/img/home_pic005.jpg'
-import pic006 from '@/assets/img/home_pic006.jpg'
-import pic002 from '@/assets/img/home_pic002.jpg'
-import pic003 from '@/assets/img/home_pic003.jpg'
-import pic004 from '@/assets/img/home_pic004.jpg'
-import vedioImg from '@/assets/img/video02.png'
-import ComponentButton from '@/components/Button'
 export default {
   data () {
     return {
-      vedioImg,
-      banners: [
-        pic001,
-        pic005,
-        pic006,
-
-      ],
-      swiperOption: {
-        loop: true,
-        slidesPerView: 'auto',
-        centeredSlides: true,
-        spaceBetween: 30,
-        autoplay: true,
-        pagination: {
-          el: '.swiper-pagination',
-        },
-        on: {
-          slideChange () {
-            console.log('onSlideChangeEnd', this);
-          },
-          tap () {
-            console.log('onTap', this);
-          }
-        }
-      },
-      swiperOption2: {
-        loop: true,
-        slidesPerView: 3,
-        centeredSlides: false,
-        spaceBetween: 30,
-        autoplay: true,
-
-      },
-      marts: [{
-        id: 0,
-        path: pic002,
-        name: 'Coles',
-        type: '超市',
-        show: false
-      }, {
-        id: 1,
-        path: pic003,
-        name: '7-Eleven',
-        type: '便利店',
-        show: false
-      }, {
-        id: 2,
-        path: pic004,
-        name: 'SPAR',
-        type: '生活超市',
-        show: false
-      },]
+      model1: '',
+      model2: ''
     }
   },
-  components: {
-    ComponentButton
-  },
   mounted () {
-    this.mySwiper.slideTo(3)
-    this.mySecondSwiper.slideTo(3)
+
   }
 }
 </script>
 
 <style lang="less">
 .index-container {
-  margin: 0 auto;
+  .menu-box {
+    width: 100%;
+    height: 90px;
+    background: rgba(255, 255, 255, 0);
 
-  .swiper-container-horizontal
-    > .swiper-pagination-bullets
-    .swiper-pagination-bullet {
-    margin: 0 0.4444444444444444rem;
-    width: 0.5185185185185185rem;
-    height: 0.5185185185185185rem;
-  }
-  .swiper-container:first-child {
-    height: calc(100vh + 46px);
-    .swiper-pagination {
-      margin-bottom: 3.814814814814815rem;
-    }
-
-    .swiper-pagination-bullet-active {
-      background: rgb(255, 255, 255);
-    }
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 16px 1fr 16.5vw;
+    align-items: center;
+    padding: 0 1.5625vw 0 2.08333vw;
     img {
-      width: 100%;
-      height: 100%;
+      height: 36px;
     }
-    .swiper-text {
-      position: absolute;
-      top: 20.64rem;
-      left: 14rem;
-      z-index: 888;
-      .text1 {
-        font-size: 2.815rem;
-        font-family: PingFangSC-Regular;
-        font-weight: bold;
-        color: rgba(255, 255, 255, 1);
-        line-height: 2.815rem;
-      }
-      .text2 {
-        font-size: 2.22rem;
-        font-family: PingFangSC-Regular;
-        font-weight: 400;
-        color: rgba(255, 255, 255, 1);
-        line-height: 2.22rem;
-        margin: 20px 0;
-      }
-      .btns {
-        margin-top: 1.78rem;
-        div {
-          margin: 0 0.44rem;
+    .menu-items {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      .menu-item {
+        margin-right: 2.60417vw;
+        .title {
+          font-family: "renner";
+          font-weight: 500;
+          letter-spacing: normal;
+          font-size: 12px;
+          font-size: 0.625vw;
+        }
+        .menu {
+          font-size: 0.83333vw;
+          font-weight: 400;
         }
       }
     }
-    .my-swiper {
-      width: 100%;
-      .swiper-slide {
-        position: relative;
-        text-align: center;
-        font-size: 38px;
-        font-weight: 700;
-        background-color: #eee;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-  }
-  .swiper-container:last-child {
-    width: 1200px;
-    height: 384px;
-    margin: 65px auto 92px auto;
-    .name-box {
-      width: 100%;
-      height: 100%;
-      background: rgba(231, 114, 0, 0);
+    .callme {
+      font-size: 0.83333vw;
+      border-radius: 1.30208vw;
+      padding: 0.3vw 0.1vw;
+      color: #fff;
+      font-weight: 700;
+      background: #ff9900;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      border-radius: 20px;
-      color: rgba(255, 255, 255, 0);
-      &:hover {
-        background: rgba(231, 114, 0, 0.7);
-        color: rgba(255, 255, 255, 1);
-        transition: all 0.3s;
-      }
-      div {
-        font-size: 42px;
-        font-family: PingFangSC-Medium;
-        font-weight: 500;
-        line-height: 42px;
+      cursor: pointer;
+      .icon {
+        padding: 0 0.5vw 0 1.30208vw;
+        img {
+          width: 1.5625vw;
+          height: 1.45833vw;
+        }
       }
     }
   }
-
-  .content {
+  .ad {
     width: 100%;
-    height: 1019px;
-    background-image: url("~assets/img/home_bg.jpg");
+    height: calc(100vh - 3.4375vw);
+    background-image: url("~assets/img/mv_bg.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    display: flex;
-    justify-content: center;
-
-    .main {
-      width: 1180px;
-      height: 100%;
-      position: relative;
+    position: relative;
+    .callrouter {
+      position: absolute;
+      padding: 7.8125vw 0 2.1875vw 4.16667vw;
+      left: 0;
+      bottom: -3.4375vw;
+      width: 61.71875vw;
+      height: 12.39583vw;
+      background: url("~assets/img/mv_chat_bg.png") top center no-repeat;
+      background-size: 100% 100%;
       display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      .introduction {
-        height: 345px;
-        width: 100%;
+      align-items: center;
+      font-size: 1.04167vw;
+      color: #ffffff;
+      .callme {
+        font-size: 0.72917vw;
+        padding: 0.3vw 0.1vw;
+        width: 14.94792vw;
+        height: 2.34375vw;
+        border-radius: 1.17188vw;
+        margin: 0 0.625vw 0 0;
+        color: #fff;
+        font-weight: 700;
+        background: #ff9900;
         display: flex;
-        align-items: flex-end;
-        position: absolute;
-        top: -46px;
-        z-index: 9999;
-        .vedio-box {
-          width: 527px;
-          height: 345px;
-          border-radius: 20px;
-          position: relative;
-          background: #000;
-          display: flex;
-          align-items: center;
-          .video-player {
-            width: 100%;
-            object-fit: fill;
-            outline: none;
+        align-items: center;
+        cursor: pointer;
+        .icon {
+          padding: 0 0.5vw 0 1.30208vw;
+          img {
+            width: 1.5625vw;
+            height: 1.45833vw;
           }
         }
-        .introduction-text {
-          .text {
-            width: 599px;
-            height: 167px;
-            font-size: 16px;
-            font-family: PingFangSC-Regular;
-            font-weight: 400;
-            color: rgba(124, 124, 124, 1);
-            line-height: 30px;
-            margin-left: 74px;
+      }
+    }
+  }
+  .content {
+    padding: 7.8125vw 0 6.25vw;
+    background: url("~assets/img/bg2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position-y: 400px;
+    .title {
+      text-align: center;
+      font-size: 2.08333vw;
+      padding: 24px 0;
+    }
+    .service-items {
+      display: grid;
+      width: 62.5vw;
+      margin: 0 auto;
+      grid-template-columns: 30% 30% 30%;
+      justify-content: space-between;
+
+      .service-item {
+        padding: 1.5625vw;
+        background-color: rgba(255, 255, 255, 0.85);
+        border: 1px solid #ffffff;
+        box-shadow: 0 0 0.83333vw 0.20833vw rgba(110, 110, 110, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .title {
+          font-size: 1.25vw;
+          line-height: 1.417;
+          text-align: center;
+          margin: 0 0 0.9375vw;
+        }
+        .icon {
+          width: 7.8125vw;
+          height: 7.8125vw;
+          border-radius: 50%;
+          background-color: #ffffff;
+          box-shadow: 0 0.78125vw 1.5625vw 0 rgba(110, 110, 110, 0.1);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 0.52083vw;
+          img {
+            width: 5.05208vw;
+            height: 3.75vw;
           }
-          .more-btn {
+        }
+        .text {
+          font-size: 0.83333vw;
+          font-weight: 300;
+          line-height: 2;
+        }
+      }
+    }
+  }
+  .qa {
+    padding: 7.8125vw 0 6.25vw;
+    > .title {
+      text-align: center;
+      padding-bottom: 48px;
+    }
+    .qalist {
+      width: 62.5vw;
+      margin: 0 auto;
+      border-top: 1px solid #cccccc;
+      .item {
+        border-bottom: 1px solid #cccccc;
+        padding: 1.5625vw 0 1.5625vw 1.5625vw;
+        display: flex;
+        > div {
+          flex: 1;
+          img {
+            width: 1.40625vw;
+            height: 1.19792vw;
+            margin: 0 0.67708vw 0 0;
+          }
+          .q {
+            font-size: 0.9375vw;
+            color: #ff9900;
+            font-weight: 700;
+            padding: 1.5625vw 0;
+            display: flex;
+            align-items: center;
+          }
+          .a {
+            border-top: 1px dashed #cccccc;
+            .title {
+              font-size: 0.9375vw;
+              color: #41bab6;
+              padding: 0.875vw 0;
+              font-weight: 700;
+              display: flex;
+              align-items: center;
+            }
+            .text {
+              font-size: 0.72917vw;
+              font-weight: 300;
+              line-height: 2;
+              text-align: justify;
+              font-weight: 400;
+            }
+          }
+        }
+
+        .btn-box {
+          flex: 0;
+          display: flex;
+          padding: 0 1.5625vw;
+          align-items: center;
+          img {
+            cursor: pointer;
+            width: 1.97917vw;
+            height: 1.97917vw;
+          }
+        }
+      }
+    }
+  }
+  .info {
+    margin: 0 6.25vw;
+    background: linear-gradient(270deg, #e6f7f8 0%, #fffcdd 60%, #fff0dc 100%);
+    padding: 5.3125vw 7.8125vw 9.375vw;
+    width: 87.5vw;
+    display: grid;
+    grid-template-columns: 17.39583vw 1fr;
+    grid-column-gap: 54px;
+    position: relative;
+    .title {
+      .sub {
+        font-size: 0.83333vw;
+        font-weight: 300;
+        line-height: 2;
+        text-align: justify;
+        margin-top: 24px;
+      }
+    }
+    .form {
+      .input-box {
+        display: flex;
+        .label {
+          width: 13.02083vw;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 0.72917vw;
+          border-bottom: 2px solid #41bab6;
+          padding: 0 0 0 1.45833vw;
+          margin-right: 24px;
+          .tag {
+            font-size: 0.52083vw;
+            color: #ffffff;
+            font-weight: 600;
+            width: 2.29167vw;
+            height: 0.9375vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url("~assets/img/contact_required_bg.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+          }
+        }
+        .input {
+          flex: 1;
+          padding: 1.35417vw 1.45833vw;
+          border-bottom: 1px solid #cccccc;
+          display: flex;
+          align-items: center;
+          &:hover {
+            cursor: text;
+          }
+          .real-input {
+            background-color: transparent;
+            border: 0;
+            outline: none;
             width: 100%;
-            text-align: center;
-            padding-top: 36px;
-            .more {
-              display: inline-block;
-              width: 180px;
-              height: 48px;
-              background: rgba(255, 137, 0, 1);
-              box-shadow: 0px 15px 20px 0px rgba(240, 99, 23, 0.5);
-              border-radius: 24px;
-              line-height: 48px;
-              font-size: 24px;
-              font-family: PingFangSC-Medium;
-              font-weight: 500;
-              color: rgba(255, 255, 255, 1);
-              &:hover {
-                cursor: pointer;
-                color: rgba(255, 255, 255, 0.8);
-              }
+            height: 100%;
+            font-weight: 500;
+            font-size: 0.72917vw;
+            color: #242424;
+            &::placeholder {
+              color: #9b9b9b;
             }
           }
         }
       }
-      .mart {
-        .title {
-          font-size: 42px;
-          font-family: PingFangSC-Regular;
-          font-weight: 400;
-          color: rgba(255, 137, 0, 1);
-          text-align: center;
+    }
+    .send {
+      position: absolute;
+      right: 7.8125vw;
+      bottom: -6.5625vw;
+      width: 50vw;
+      min-height: 10.72917vw;
+      background-color: #242424;
+      border: 1px solid #424242;
+      padding: 0 3.95833vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .text {
+        font-size: 0.83333vw;
+        color: #ffffff;
+        font-weight: 600;
+        line-height: 2;
+        .text1 {
+          margin: 0 0 1.25vw;
+          .href {
+            color: #47bcb7;
+            border-bottom: 1px solid #47bcb7;
+            padding-bottom: 0.55vw;
+            cursor: pointer;
+            &:hover {
+              color: #84dfda;
+              border-bottom: 1px solid #84dfda;
+            }
+          }
         }
+      }
+      .submit {
+        width: 17.70833vw;
+        height: 3.02083vw;
+        background-color: #ff9900;
+        border-radius: 1.51042vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.9375vw;
+        color: #ffffff;
+        font-weight: 700;
+        cursor: pointer;
+        img {
+          width: 1.66667vw;
+          height: 1.66667vw;
+          margin: 0 0.9375vw 0 0;
+        }
+      }
+    }
+  }
+  .footer {
+    padding: 4.42708vw 0 1.45833vw;
+    width: 71.875vw;
+    margin: 0 auto;
+    > img {
+      width: 17.70833vw;
+      margin-bottom: 6px;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      font-family: "renner";
+      font-weight: 500;
+      letter-spacing: normal;
+      font-size: 1.14583vw;
+      color: rgba(0, 0, 0, 0.6);
+      > img {
+        width: 1.14583vw;
+        margin-right: 1vw;
+        margin-left: 0.3vw;
       }
     }
   }
