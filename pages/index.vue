@@ -1,18 +1,22 @@
 <template>
   <div class="index-container">
-    <div class="menu-box">
-      <img src="~assets/img/logo.png" alt>
+    <div id="top"></div>
+    <div
+      class="menu-box"
+      :style="{height:height+'px',background:`rgba(255, 255, 255,${background})`}"
+    >
+      <img src="~assets/img/logo.png" alt @click="go('top')">
       <div class="menu-items">
-        <div class="menu-item">
+        <div class="menu-item" @click="go('services')">
           <div class="title">01 Services</div>
           <div class="menu">ITサービス事業</div>
         </div>
-        <div class="menu-item">
+        <div class="menu-item" @click="go('services')">
           <div class="title">02 Product</div>
           <div class="menu">コンサルティング事業</div>
         </div>
       </div>
-      <div class="callme">
+      <div class="callme" @click="go('callme')">
         <span class="icon">
           <img src="~assets/img/ico_chat.svg" alt>
         </span>
@@ -30,7 +34,7 @@
         <span>クラウド構築からWeb / スマホアプリ開発、リリース後の運用サポートまで対応！</span>
       </div>
     </div>
-
+    <div id="services"></div>
     <div class="content">
       <div class="title">SERVICES</div>
       <div class="service-items">
@@ -69,21 +73,44 @@
             <div class="q">
               <img src="~assets/img/en-q.png" alt>自社のIT担当者がいません。本当に大丈夫ですか？
             </div>
-            <div class="a">
-              <div class="title">
-                <img src="~assets/img/en-a.png" alt>はい、ご安心ください！
+            <transition name="bottom-fade">
+              <div class="a" v-show="stateA1">
+                <div class="title">
+                  <img src="~assets/img/en-a.png" alt>はい、ご安心ください！
+                </div>
+                <div
+                  class="text"
+                >冠婚葬祭業やキックボクシングジム、ホームセンターなどIT専任の担当者がいない、エンドユーザーのお客様のサービス開発経験は数多くあります。プロジェクトマネージャーがしっかりプロジェクトを進行いたしますので、すべてお任せください！</div>
               </div>
-              <div
-                class="text"
-              >冠婚葬祭業やキックボクシングジム、ホームセンターなどIT専任の担当者がいない、エンドユーザーのお客様のサービス開発経験は数多くあります。プロジェクトマネージャーがしっかりプロジェクトを進行いたしますので、すべてお任せください！</div>
-            </div>
+            </transition>
           </div>
-          <div class="btn-box">
+          <div class="btn-box" :class="{'btn-box-active':stateA1}" @click="openAnswer('1')">
+            <img src="~assets/img/arrow_c.svg" alt>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <div class="q">
+              <img src="~assets/img/en-q.png" alt>まだ要件が固まっていないのですが、見積もりしてもらえますか？
+            </div>
+            <transition name="bottom-fade">
+              <div class="a" v-show="stateA2">
+                <div class="title">
+                  <img src="~assets/img/en-a.png" alt>概算でお見積もりさせていただきます！
+                </div>
+                <div
+                  class="text"
+                >サービスの企画段階の場合は、まずお打ち合わせでヒアリングした結果をもとに、概算でのお見積書を提出させていただきます。企画書や画面イメージ、出力データなどの各種資料をいただけますとスムーズです！</div>
+              </div>
+            </transition>
+          </div>
+          <div class="btn-box" :class="{'btn-box-active':stateA2}" @click="openAnswer('2')">
             <img src="~assets/img/arrow_c.svg" alt>
           </div>
         </div>
       </div>
     </div>
+    <div id="callme"></div>
     <div class="info">
       <div class="title">
         <h2>
@@ -101,7 +128,7 @@
           <div class="input" @click="$refs.input1.focus()">
             <input
               ref="input1"
-              :value="model1"
+              v-model="company"
               type="text"
               class="real-input"
               placeholder="会社名をご記入ください"
@@ -116,7 +143,7 @@
           <div class="input" @click="$refs.input2.focus()">
             <input
               ref="input2"
-              :value="model2"
+              v-model="name"
               type="text"
               class="real-input"
               placeholder="お名前をご記入ください"
@@ -131,7 +158,7 @@
           <div class="input" @click="$refs.input3.focus()">
             <input
               ref="input3"
-              :value="model"
+              v-model="mail"
               type="text"
               class="real-input"
               placeholder="メールアドレスをご記入ください"
@@ -145,9 +172,13 @@
             <span class="href">個人情報の取り扱いについて、</span>
             <span>ご同意の上ご送信ください。</span>
           </div>
-          <div class="text2">個人情報の取り扱いについて同意して送信する</div>
+          <div class="text2">
+            <i class="radio" @click="yes=!yes">
+              <img src="~assets/img/yes.svg" :class="{'hidden':!yes}" alt>
+            </i> 個人情報の取り扱いについて同意して送信する
+          </div>
         </div>
-        <div class="submit">
+        <div class="submit" @click="submit">
           <img src="~assets/img/ico_send.svg" alt>入力内容を送信する
         </div>
       </div>
@@ -168,25 +199,77 @@
 </template>
 
 <script>
+import { TweenLite } from 'gsap';
 export default {
   data () {
     return {
-      model1: '',
-      model2: ''
+      company: '',
+      name: '',
+      mail: '',
+      state: false,
+      height: 90,
+      background: 0,
+      stateA1: false,
+      stateA2: false,
+      stateA3: false,
+      yes: false
     }
   },
   mounted () {
+    this.handleScroll()
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll () {
 
+      var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+      if (scrollTop > 30 && !this.state) {
+        TweenLite.to(this.$data, 0.5, { height: 64 });
+        TweenLite.to(this.$data, 0.5, { background: 1 });
+        this.state = true
+      }
+      if (scrollTop < 30 && this.state) {
+        TweenLite.to(this.$data, 0.5, { height: 90 });
+        TweenLite.to(this.$data, 0.5, { background: 0 });
+        this.state = false
+      }
+    },
+    openAnswer (k) {
+      let key = 'stateA' + k
+      this.$data[key] = !this.$data[key]
+    },
+    submit () {
+      let { company, name, mail, yes } = this
+
+      if (company && name && mail && yes) {
+        let to = '278188438@qq.com'
+        let cc = 'qq278188438@163.com'
+        let subject = 'まずは無料で ご相談ください'
+        let body = `会社名：${company},お名前：${name},メールアドレス：${mail}`
+        window.location = `mailto:${to}?subject=${subject}&cc=${cc}&subject=${subject}&body=${body}`
+      } else {
+        alert('请填写完整的信息并同意条款')
+      }
+    },
+    go (to) {
+      // let height = document.documentElement.clientHeight
+      // document.documentElement.scrollTop = height
+      document.getElementById(to).scrollIntoView({ behavior: "smooth" });
+    }
   }
 }
 </script>
 
 <style lang="less">
+@import "../assets/less/translate.less";
+@primary: #22a2c3;
+@aider: #91ad70;
 .index-container {
   .menu-box {
     width: 100%;
-    height: 90px;
-    background: rgba(255, 255, 255, 0);
+    // height: 90px;
+    // background: rgba(255, 255, 255, 0);
 
     position: fixed;
     z-index: 9999;
@@ -197,6 +280,7 @@ export default {
     align-items: center;
     padding: 0 1.5625vw 0 2.08333vw;
     img {
+      cursor: pointer;
       height: 36px;
     }
     .menu-items {
@@ -205,6 +289,7 @@ export default {
       align-items: center;
       .menu-item {
         margin-right: 2.60417vw;
+        cursor: pointer;
         .title {
           font-family: "renner";
           font-weight: 500;
@@ -224,7 +309,7 @@ export default {
       padding: 0.3vw 0.1vw;
       color: #fff;
       font-weight: 700;
-      background: #ff9900;
+      background: @primary;
       display: flex;
       align-items: center;
       cursor: pointer;
@@ -266,7 +351,7 @@ export default {
         margin: 0 0.625vw 0 0;
         color: #fff;
         font-weight: 700;
-        background: #ff9900;
+        background: @primary;
         display: flex;
         align-items: center;
         cursor: pointer;
@@ -322,6 +407,7 @@ export default {
           justify-content: center;
           align-items: center;
           margin-bottom: 0.52083vw;
+          color: @primary;
           img {
             width: 5.05208vw;
             height: 3.75vw;
@@ -358,7 +444,7 @@ export default {
           }
           .q {
             font-size: 0.9375vw;
-            color: #ff9900;
+            color: @primary;
             font-weight: 700;
             padding: 1.5625vw 0;
             display: flex;
@@ -368,7 +454,7 @@ export default {
             border-top: 1px dashed #cccccc;
             .title {
               font-size: 0.9375vw;
-              color: #41bab6;
+              color: @aider;
               padding: 0.875vw 0;
               font-weight: 700;
               display: flex;
@@ -393,6 +479,14 @@ export default {
             cursor: pointer;
             width: 1.97917vw;
             height: 1.97917vw;
+            transform: rotate(0deg);
+            transition: transform 0.4s;
+          }
+        }
+        .btn-box-active {
+          img {
+            transform: rotate(180deg);
+            transition: all 0.4s;
           }
         }
       }
@@ -400,7 +494,7 @@ export default {
   }
   .info {
     margin: 0 6.25vw;
-    background: linear-gradient(270deg, #e6f7f8 0%, #fffcdd 60%, #fff0dc 100%);
+    background: linear-gradient(270deg, #92d0df 0%, #d2f1f1 60%, #c1d5bc 100%);
     padding: 5.3125vw 7.8125vw 9.375vw;
     width: 87.5vw;
     display: grid;
@@ -425,7 +519,7 @@ export default {
           justify-content: space-between;
           align-items: center;
           font-size: 0.72917vw;
-          border-bottom: 2px solid #41bab6;
+          border-bottom: 2px solid @aider;
           padding: 0 0 0 1.45833vw;
           margin-right: 24px;
           .tag {
@@ -487,13 +581,38 @@ export default {
         .text1 {
           margin: 0 0 1.25vw;
           .href {
-            color: #47bcb7;
-            border-bottom: 1px solid #47bcb7;
+            color: @aider;
+            border-bottom: 1px solid @aider;
             padding-bottom: 0.55vw;
             cursor: pointer;
             &:hover {
-              color: #84dfda;
-              border-bottom: 1px solid #84dfda;
+              color: #a5df84;
+              border-bottom: 1px solid #a5df84;
+            }
+          }
+        }
+        .text2 {
+          display: flex;
+          align-items: center;
+          .radio {
+            width: 1.04167vw;
+            height: 1.04167vw;
+            border: 1px solid #ffffff;
+            margin: 0 0.41667vw 0 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+              width: 100%;
+              height: 100%;
+              margin-top: 0.1vw;
+              opacity: 1;
+              transition: opacity 0.3s;
+            }
+            .hidden {
+              opacity: 0;
+              transition: opacity 0.3s;
             }
           }
         }
@@ -501,7 +620,7 @@ export default {
       .submit {
         width: 17.70833vw;
         height: 3.02083vw;
-        background-color: #ff9900;
+        background-color: @primary;
         border-radius: 1.51042vw;
         display: flex;
         justify-content: center;
