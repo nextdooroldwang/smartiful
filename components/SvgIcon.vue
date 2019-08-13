@@ -18,6 +18,9 @@ export default {
       default: '',
     },
   },
+  mounted () {
+    console.log(this.iconClass)
+  },
   computed: {
     iconName () {
       return `#icon-${this.iconClass}`

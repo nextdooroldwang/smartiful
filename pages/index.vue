@@ -19,16 +19,16 @@
       </div>
       <div class="callme" @click="go('callme')">
         <span class="icon">
-          <img src="~assets/img/ico_chat.svg" alt>
+          <svg-icon icon-class="ico_chat"/>
         </span>
         <span class="text">無料でチャットカウンセリング</span>
       </div>
     </div>
     <div class="ad">
       <div class="callrouter">
-        <div class="callme">
+        <div class="callme" @click="go('callme')">
           <span class="icon">
-            <img src="~assets/img/ico_chat.svg" alt>
+            <svg-icon icon-class="ico_chat"/>
           </span>
           <span class="text">無料でチャットカウンセリング</span>
         </div>
@@ -37,9 +37,11 @@
     </div>
     <div id="services"></div>
     <div class="content">
-      <div class="title">
-        SERVICES
-        <!-- <svg-icon icon-class="yes"/> -->
+      <div class="title">SERVICES</div>
+      <div class="line">
+        <div class="l"></div>
+        <div class="m"></div>
+        <div class="r"></div>
       </div>
       <div class="service-items">
         <div class="service-item">
@@ -192,7 +194,7 @@
           <div class="rule" v-if="!yes&&company&&name&&mail">※同意チェックボックスを入力してください</div>
         </div>
         <div class="submit" @click="submit">
-          <img src="~assets/img/ico_send.svg" alt>入力内容を送信する
+          <svg-icon icon-class="ico_send"/>入力内容を送信する
         </div>
       </div>
     </div>
@@ -338,6 +340,7 @@ export default {
     .callme {
       font-size: 0.83333vw;
       border-radius: 1.30208vw;
+      border: 3px solid @primary;
       padding: 0.3vw 0.1vw;
       color: #fff;
       font-weight: 700;
@@ -347,9 +350,18 @@ export default {
       cursor: pointer;
       .icon {
         padding: 0 0.5vw 0 1.30208vw;
-        img {
+        .svg-icon {
           width: 1.5625vw;
           height: 1.45833vw;
+        }
+      }
+      &:hover {
+        background-color: rgba(255, 255, 255, 0);
+        color: @primary;
+        transition: all 0.5s;
+        .svg-icon {
+          color: @primary;
+          transition: all 0.5s;
         }
       }
     }
@@ -380,6 +392,7 @@ export default {
         width: 14.94792vw;
         height: 2.34375vw;
         border-radius: 1.17188vw;
+        border: 3px solid @primary;
         margin: 0 0.625vw 0 0;
         color: #fff;
         font-weight: 700;
@@ -389,9 +402,18 @@ export default {
         cursor: pointer;
         .icon {
           padding: 0 0.5vw 0 1.30208vw;
-          img {
+          .svg-icon {
             width: 1.5625vw;
             height: 1.45833vw;
+          }
+        }
+        &:hover {
+          background-color: rgba(255, 255, 255, 0);
+          color: @primary;
+          transition: all 0.5s;
+          .svg-icon {
+            color: @primary;
+            transition: all 0.5s;
           }
         }
       }
@@ -406,8 +428,35 @@ export default {
     .title {
       text-align: center;
       font-size: 2.08333vw;
-      padding: 24px 0;
+      padding-top: 24px;
+      font-family: "Josefin Sans", sans-serif;
     }
+    .line {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1vw 0 3vw 0;
+      .l {
+        width: 3vw;
+        height: 2px;
+        background: #ddd;
+        // background: linear-gradient(270deg, #ddd, #fff);
+      }
+      .m {
+        width: 0.3vw;
+        height: 0.3vw;
+        border-radius: 50%;
+        background: #ddd;
+        margin: 0 0.5vw;
+      }
+      .r {
+        width: 3vw;
+        height: 2px;
+        background: #ddd;
+        // background: linear-gradient(90deg, #ddd, #fff);
+      }
+    }
+
     .service-items {
       display: grid;
       width: 62.5vw;
@@ -663,10 +712,20 @@ export default {
         color: #ffffff;
         font-weight: 700;
         cursor: pointer;
-        img {
+        .svg-icon {
           width: 1.66667vw;
           height: 1.66667vw;
           margin: 0 0.9375vw 0 0;
+        }
+        &:hover {
+          background-color: rgba(255, 255, 255, 0);
+          border: 3px solid @primary;
+          color: @primary;
+          transition: all 0.5s;
+          .svg-icon {
+            color: @primary;
+            transition: all 0.5s;
+          }
         }
       }
     }
