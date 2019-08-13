@@ -6,6 +6,7 @@
       :style="{height:height+'px',background:`rgba(255, 255, 255,${background})`}"
     >
       <img src="~assets/img/logo.png" alt @click="go('top')">
+
       <div class="menu-items">
         <div class="menu-item" @click="go('services')">
           <div class="title">01 Services</div>
@@ -36,7 +37,10 @@
     </div>
     <div id="services"></div>
     <div class="content">
-      <div class="title">SERVICES</div>
+      <div class="title">
+        SERVICES
+        <!-- <svg-icon icon-class="yes"/> -->
+      </div>
       <div class="service-items">
         <div class="service-item">
           <div class="title">ITサービス事業</div>

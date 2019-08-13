@@ -1,3 +1,5 @@
+const resolve = require('path').resolve
+
 export default {
 	mode: 'universal',
 	/*
@@ -24,7 +26,7 @@ export default {
 	/*
 	 ** Plugins to load before mounting the App
 	 */
-	plugins: [{ src: '@/plugins/swiper', ssr: false }],
+	plugins: [{ src: '@/plugins/swiper', ssr: false }, { src: '@/plugins/icon', ssr: false }],
 	/*
 	 ** Nuxt.js modules
 	 */
@@ -39,6 +41,19 @@ export default {
 		/*
 		 ** You can extend webpack config here
 		 */
-		extend(config, ctx) {}
+		extend(config, ctx) {
+			const svgRule = config.module.rules.find(rule => rule.test.test('.svg'))
+			svgRule.exclude = [resolve(__dirname, 'assets/svg')]
+
+			// Includes /assets/icons/svg for svg-sprite-loader
+			config.module.rules.push({
+				test: /\.svg$/,
+				include: [resolve(__dirname, 'assets/svg')],
+				loader: 'svg-sprite-loader',
+				options: {
+					symbolId: 'icon-[name]'
+				}
+			})
+		}
 	}
 }
