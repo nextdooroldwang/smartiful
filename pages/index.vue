@@ -132,7 +132,9 @@
               type="text"
               class="real-input"
               placeholder="会社名をご記入ください"
+              @change="rule"
             >
+            <div class="rule" v-if="rule1">※必須項目を入力してください</div>
           </div>
         </div>
         <div class="input-box">
@@ -147,7 +149,9 @@
               type="text"
               class="real-input"
               placeholder="お名前をご記入ください"
+              @change="rule"
             >
+            <div class="rule" v-if="rule2">※必須項目を入力してください</div>
           </div>
         </div>
         <div class="input-box">
@@ -162,7 +166,10 @@
               type="text"
               class="real-input"
               placeholder="メールアドレスをご記入ください"
+              @change="rule"
             >
+            <div class="rule" v-if="rule3">※必須項目を入力してください</div>
+            <div class="rule" v-if="rule3">※@を含む形式でご入力ください</div>
           </div>
         </div>
       </div>
@@ -175,8 +182,10 @@
           <div class="text2">
             <i class="radio" @click="yes=!yes">
               <img src="~assets/img/yes.svg" :class="{'hidden':!yes}" alt>
-            </i> 個人情報の取り扱いについて同意して送信する
+            </i>
+            個人情報の取り扱いについて同意して送信する
           </div>
+          <div class="rule" v-if="!yes&&company&&name&&mail">※同意チェックボックスを入力してください</div>
         </div>
         <div class="submit" @click="submit">
           <img src="~assets/img/ico_send.svg" alt>入力内容を送信する
@@ -200,6 +209,7 @@
 
 <script>
 import { TweenLite } from 'gsap';
+const reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
 export default {
   data () {
     return {
@@ -212,7 +222,10 @@ export default {
       stateA1: false,
       stateA2: false,
       stateA3: false,
-      yes: false
+      yes: false,
+      rule1: false,
+      rule2: false,
+      rule3: false,
     }
   },
   mounted () {
@@ -242,18 +255,35 @@ export default {
     submit () {
       let { company, name, mail, yes } = this
 
-      if (company && name && mail && yes) {
+      if (company && name && mail && yes && reg.test(mail)) {
         let to = '278188438@qq.com'
         let cc = 'qq278188438@163.com'
         let subject = 'まずは無料で ご相談ください'
         let body = `会社名：${company},お名前：${name},メールアドレス：${mail}`
         window.location = `mailto:${to}?subject=${subject}&cc=${cc}&subject=${subject}&body=${body}`
       } else {
-        alert('请填写完整的信息并同意条款')
+        this.rule()
       }
     },
     go (to) {
       document.getElementById(to).scrollIntoView({ behavior: "smooth" });
+    },
+    rule () {
+      if (this.company) {
+        this.rule1 = false
+      } else {
+        this.rule1 = true
+      }
+      if (this.name) {
+        this.rule2 = false
+      } else {
+        this.rule2 = true
+      }
+      if (this.mail && reg.test(this.mail)) {
+        this.rule3 = false
+      } else {
+        this.rule3 = true
+      }
     }
   }
 }
@@ -539,7 +569,8 @@ export default {
           padding: 1.35417vw 1.45833vw;
           border-bottom: 1px solid #cccccc;
           display: flex;
-          align-items: center;
+          flex-direction: column;
+          justify-content: center;
           &:hover {
             cursor: text;
           }
@@ -552,6 +583,7 @@ export default {
             font-weight: 500;
             font-size: 0.72917vw;
             color: #242424;
+            margin-bottom: 0.8vw;
             &::placeholder {
               color: #9b9b9b;
             }
@@ -633,6 +665,11 @@ export default {
           margin: 0 0.9375vw 0 0;
         }
       }
+    }
+    .rule {
+      color: @primary;
+      font-weight: 600;
+      font-size: 0.72917vw;
     }
   }
   .footer {
