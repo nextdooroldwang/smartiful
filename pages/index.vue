@@ -178,6 +178,22 @@
             <div class="rule" v-if="rule3">※@を含む形式でご入力ください</div>
           </div>
         </div>
+        <div class="input-box">
+          <div class="label">
+            <div>その他ご質問など</div>
+          </div>
+          <div class="input" @click="$refs.input4.focus()">
+            <textarea
+              style="resize:none;"
+              ref="input4"
+              v-model="mark"
+              type="text"
+              class="real-input"
+              placeholder="なんでもお気軽にご相談ください"
+              rows="2"
+            />
+          </div>
+        </div>
       </div>
       <div class="send">
         <div class="text">
@@ -222,6 +238,7 @@ export default {
       company: '',
       name: '',
       mail: '',
+      mark: '',
       state: false,
       height: 90,
       background: 0,
