@@ -5,16 +5,20 @@
       class="menu-box"
       :style="{height:height+'px',background:`rgba(255, 255, 255,${background})`}"
     >
-      <img src="~assets/img/logo.png" alt @click="go('top')">
+      <img src="~assets/img/logo3.png" alt @click="go('top')">
 
       <div class="menu-items">
         <div class="menu-item" @click="go('services')">
-          <div class="title">01 Services</div>
+          <div class="title">01 XXXXXX</div>
           <div class="menu">ITサービス事業</div>
         </div>
         <div class="menu-item" @click="go('services')">
-          <div class="title">02 Product</div>
+          <div class="title">02 XXXXXX</div>
           <div class="menu">コンサルティング事業</div>
+        </div>
+        <div class="menu-item" @click="go('services')">
+          <div class="title">03 XXXXXX</div>
+          <div class="menu">オンラインビジネス事業</div>
         </div>
       </div>
       <div class="callme" @click="go('callme')">
@@ -215,7 +219,7 @@
       </div>
     </div>
     <div class="footer">
-      <img src="~assets/img/logo.png" alt>
+      <img src="~assets/img/logo3.png" alt>
       <div>
         <img src="~assets/img/address.svg" alt>東京都港区南青山2-2-15
       </div>
@@ -332,7 +336,7 @@ export default {
     padding: 0 1.5625vw 0 2.08333vw;
     img {
       cursor: pointer;
-      height: 36px;
+      height: 28px;
     }
     .menu-items {
       display: flex;
@@ -440,8 +444,8 @@ export default {
     padding: 7.8125vw 0 6.25vw;
     background: url("~assets/img/bg2.jpg");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position-y: 400px;
+    background-size: auto 100%;
+    background-position-y: 26vw;
     .title {
       text-align: center;
       font-size: 2.08333vw;
@@ -592,7 +596,7 @@ export default {
   }
   .info {
     margin: 0 6.25vw;
-    background: linear-gradient(270deg, #92d0df 0%, #d2f1f1 60%, #c1d5bc 100%);
+    background: linear-gradient(270deg, #dae6d7 0%, #d2f1f1 60%, #bee3ec 100%);
     padding: 5.3125vw 7.8125vw 9.375vw;
     width: 87.5vw;
     display: grid;
@@ -757,7 +761,7 @@ export default {
     width: 71.875vw;
     margin: 0 auto;
     > img {
-      width: 17.70833vw;
+      width: 11.70833vw;
       margin-bottom: 6px;
     }
     div {
