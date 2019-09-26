@@ -12,13 +12,12 @@
           <div class="title">01 XXXXXX</div>
           <div class="menu">ITサービス事業</div>
         </div>
-        <div class="menu-item" @click="go('services')">
+        <div class="menu-item" @click="go('services')" @mouseenter="openMenu2" @mouseleave="closeMenu2">
           <div class="title">02 XXXXXX</div>
           <div class="menu">コンサルティング事業</div>
-        </div>
-        <div class="menu-item" @click="go('services')">
-          <div class="title">03 XXXXXX</div>
-          <div class="menu">オンラインビジネス事業</div>
+          <transition name="menu-animate">
+            <div v-show="menu2" class="tips">開発中…</div>
+          </transition>
         </div>
       </div>
       <div class="callme" @click="go('callme')">
@@ -29,6 +28,12 @@
       </div>
     </div>
     <div class="ad">
+      <transition name="slide-fade">
+        <div class="description" v-show="show">
+          <h2>自社サービス開発をsmartifulにしましょう！</h2>
+          <p style="margin-top: 15px">スマート　X    高品質　X  速い　X コスト削減</p>
+        </div>
+      </transition>
       <div class="callrouter">
         <div class="callme" @click="go('callme')">
           <span class="icon">
@@ -49,29 +54,46 @@
       </div>
       <div class="service-items">
         <div class="service-item">
-          <div class="title">ITサービス事業</div>
+          <div class="title">クラウド移行と保守事業</div>
           <div class="icon">
-            <img src="~assets/img/services.svg" alt>
+            <img src="~assets/img/cloud.svg" alt>
           </div>
           <div
             class="text"
-          >蓄積された豊富なノウハウによって、高品質なITサービス（特にiOS&Androidアプリ）をオーダーメイドで開発いたします。当社の開発チームお客様と直接やり取りし、ご希望に沿った体験デザイン、設計、実装を行います。</div>
-        </div>
-        <div class="service-item">
-          <div class="title">コンサルティング事業</div>
-          <div class="icon">
-            <img src="~assets/img/product.svg" alt>
+          >クラウド環境への最適な移行をプロフェッショナルがサポートまるっとゼロから全部お任せください！
+            <p>1. AWS/GCP/Azure の経験豊富なエンジニアがお客様の不明点や懸案事項を解決します。</p>
+            <p>2. 安全でスピーディーな移行計画を立案・実行します。</p>
+            <p>3. クラウドならではの仕組みで移行後の運用・保守の業務を効率化します。</p>
           </div>
-          <div class="text">モバイル開発・インターネット・IT事業についてのコンサルティングサービスで貴社の成長をサポートします。</div>
         </div>
         <div class="service-item">
-          <div class="title">オンラインビジネス事業</div>
+          <div class="title">アプリケーション開発事業</div>
           <div class="icon">
-            <img src="~assets/img/callme.svg" alt>
+            <img src="~assets/img/application.svg" alt>
+          </div>
+          <div class="text">Webアプリからネイティブアプリまでにこれまでに蓄積された開発のノウハウを武器に、シームレスな課題解決策を提案。開発規模を問わず、グローバル規模のインサイトと最先端の技術を駆使した効果的な戦略を提供します。</div>
+        </div>
+        <div class="service-item">
+          <div class="title">ブロックチェーン開発事業</div>
+          <div class="icon">
+            <img src="~assets/img/blockchain.svg" alt>
           </div>
           <div
             class="text"
-          >海外卸サイトから仕入れた商品を、インターネットを通じて販売する。お客様の生活・人生を豊かにするため、お客様の立場で考え、進歩し続ける努力を怠らない、より高品質、より安い商品の提供ができるように努力致します。</div>
+          >ブロックチェーンの共同研究開発や実証実験などを通じてブロックチェーン技術の実用化を進めています。 また、中国の他の仮想通貨企業ともブロックチェーン分野での業務提携を積極的に行っており、 中国にブロックチェーン技術を集積させブロックチェーン技術の基盤を作ることで、 大規模案件などの需要の高まりに対応できる体制を整え、新たなブロックチェーンプロダクト開発することが出ます。</div>
+        </div>
+        <div class="service-item">
+          <div class="title">AI研究開発事業</div>
+          <div class="icon">
+            <img src="~assets/img/ai.svg" alt>
+          </div>
+          <div
+            class="text"
+          > 
+          <p>１、アカデミア（学術研究）での知見を活かし、機械学習アルゴリズムの共同研究・開発にも取り組んでいます。</p>
+          <p>2、最新の機械学習技術をベースに、御社ビジネスにジャストフィットするAIモデルをオーダーメイドで開発いたします。</p>
+          <p>3、課題の整理や、AI導入ポイントの特定、企画支援など、カスタムAI導入前からサポートさせていただきます。</p>
+          </div>
         </div>
       </div>
     </div>
@@ -253,11 +275,14 @@ export default {
       rule1: false,
       rule2: false,
       rule3: false,
+      show: false,
+      menu2: false
     }
   },
   mounted () {
     this.handleScroll()
     window.addEventListener('scroll', this.handleScroll)
+    this.show = true
   },
   methods: {
     handleScroll () {
@@ -311,6 +336,12 @@ export default {
       } else {
         this.rule3 = true
       }
+    },
+    openMenu2() {
+      this.menu2 = true
+    },
+    closeMenu2() {
+      this.menu2 = false
     }
   }
 }
@@ -320,6 +351,23 @@ export default {
 @import "../assets/less/translate.less";
 @primary: #22a2c3;
 @aider: #91ad70;
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active for below version 2.1.8 */ {
+  transform: translateX(1000px);
+  opacity: 0;
+}
+.menu-animate-enter-active, .menu-animate-leave-active {
+  transition: opacity .5s;
+}
+.menu-animate-enter, .menu-animate-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 .index-container {
   .menu-box {
     width: 100%;
@@ -343,6 +391,7 @@ export default {
       justify-content: flex-end;
       align-items: center;
       .menu-item {
+        position: relative;
         margin-right: 2.60417vw;
         cursor: pointer;
         .title {
@@ -355,6 +404,19 @@ export default {
         .menu {
           font-size: 0.83333vw;
           font-weight: 400;
+        }
+        .tips {
+          position: absolute;
+          left: 0;
+          bottom: -40px;
+          width: 100%;
+          height: 40px;
+          line-height: 40px;
+          background: #e4ebe4;
+          font-size: 14px;
+          color: rgba(0,0,0,0.65);
+          text-indent: 6px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
       }
     }
@@ -394,6 +456,14 @@ export default {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: relative;
+    .description {
+      position: absolute;
+      top: 50%;
+      margin-top: -40px;
+      width: 100%;
+      height: 80px;
+      text-align: center;
+    }
     .callrouter {
       position: absolute;
       padding: 7.8125vw 0 2.1875vw 4.16667vw;
@@ -480,9 +550,9 @@ export default {
 
     .service-items {
       display: grid;
-      width: 62.5vw;
+      width: 90vw;
       margin: 0 auto;
-      grid-template-columns: 30% 30% 30%;
+      grid-template-columns: 22% 22% 22% 22%;
       justify-content: space-between;
 
       .service-item {
