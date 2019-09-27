@@ -12,7 +12,7 @@
           <div class="title">01 XXXXXX</div>
           <div class="menu">ITサービス事業</div>
         </div>
-        <div class="menu-item" @click="go('services')" @mouseenter="openMenu2" @mouseleave="closeMenu2">
+        <div class="menu-item" @click="go('services')" @mouseover="openMenu2" @mouseleave="closeMenu2">
           <div class="title">02 XXXXXX</div>
           <div class="menu">コンサルティング事業</div>
           <transition name="menu-animate">
@@ -30,8 +30,13 @@
     <div class="ad">
       <transition name="slide-fade">
         <div class="description" v-show="show">
-          <h2>自社サービス開発をsmartifulにしましょう！</h2>
-          <p style="margin-top: 15px">スマート　X    高品質　X  速い　X コスト削減</p>
+          <h2 class="decp-title">自社サービス開発をsmartifulにしましょう！</h2>
+          <div class="decp-content">
+            <p class="decp-item"><span class="decp-text">スマート</span><span class="xtag">X</span></p>
+            <p class="decp-item"><span class="decp-text">X高品質</span><span class="xtag">X</span></p>
+            <p class="decp-item"><span class="decp-text">X  速い</span><span class="xtag">X</span></p>
+            <p class="decp-item"><span class="decp-text">X コスト削減</span></p>
+            </div>
         </div>
       </transition>
       <div class="callrouter">
@@ -338,6 +343,7 @@ export default {
       }
     },
     openMenu2() {
+      console.log(1)
       this.menu2 = true
     },
     closeMenu2() {
@@ -458,11 +464,40 @@ export default {
     position: relative;
     .description {
       position: absolute;
-      top: 50%;
-      margin-top: -40px;
+      top: 23%;
       width: 100%;
-      height: 80px;
+      height: auto;
       text-align: center;
+      .decp-title {
+        font-size: 60px
+      }
+      .decp-item {
+        display: flex;
+        align-items: center
+        // padding: 0 10px
+      }
+      .xtag {
+        width: 50px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-size: 28px;
+      }
+      .decp-content {
+        margin-top: 6%;
+        display: flex;
+        justify-content: center;
+      }
+      .decp-text {
+        display: block;
+        width: 200px;
+        height: 60px;
+        line-height: 60px;
+        border-radius: 25px;
+        border: 1px solid #000;
+        text-align: center;
+        font-size: 28px;
+      }
     }
     .callrouter {
       position: absolute;
