@@ -225,9 +225,14 @@
             />
           </div>
         </div>
+        <div style="margin-top: 40px; display:flex; justify-content: flex-end">
+          <div class="submit" @click="submit">
+            <svg-icon icon-class="ico_send"/>入力内容を送信する
+          </div>
+        </div>
       </div>
-      <div class="send">
-        <!-- <div class="text">
+      <!-- <div class="send">
+        <div class="text">
           <div class="text1">
             <span class="href">個人情報の取り扱いについて、</span>
             <span>ご同意の上ご送信ください。</span>
@@ -239,11 +244,11 @@
             個人情報の取り扱いについて同意して送信する
           </div>
           <div class="rule" v-if="!yes&&company&&name&&mail">※同意チェックボックスを入力してください</div>
-        </div> -->
+        </div>
         <div class="submit" @click="submit">
           <svg-icon icon-class="ico_send"/>入力内容を送信する
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="footer">
       <img src="~assets/img/logo3.png" alt>
@@ -769,6 +774,34 @@ export default {
           }
         }
       }
+      .submit {
+        width: 17.70833vw;
+        height: 3.02083vw;
+        background-color: @primary;
+        border-radius: 1.51042vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.9375vw;
+        color: #ffffff;
+        font-weight: 700;
+        cursor: pointer;
+        .svg-icon {
+          width: 1.66667vw;
+          height: 1.66667vw;
+          margin: 0 0.9375vw 0 0;
+        }
+        &:hover {
+          background-color: rgba(255, 255, 255, 0);
+          border: 3px solid @primary;
+          color: @primary;
+          transition: all 0.5s;
+          .svg-icon {
+            color: @primary;
+            transition: all 0.5s;
+          }
+        }
+      }
     }
     .send {
       position: absolute;
@@ -826,34 +859,7 @@ export default {
           }
         }
       }
-      .submit {
-        width: 17.70833vw;
-        height: 3.02083vw;
-        background-color: @primary;
-        border-radius: 1.51042vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 0.9375vw;
-        color: #ffffff;
-        font-weight: 700;
-        cursor: pointer;
-        .svg-icon {
-          width: 1.66667vw;
-          height: 1.66667vw;
-          margin: 0 0.9375vw 0 0;
-        }
-        &:hover {
-          background-color: rgba(255, 255, 255, 0);
-          border: 3px solid @primary;
-          color: @primary;
-          transition: all 0.5s;
-          .svg-icon {
-            color: @primary;
-            transition: all 0.5s;
-          }
-        }
-      }
+      
     }
     .rule {
       color: @primary;
