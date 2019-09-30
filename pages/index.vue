@@ -227,7 +227,7 @@
         </div>
       </div>
       <div class="send">
-        <div class="text">
+        <!-- <div class="text">
           <div class="text1">
             <span class="href">個人情報の取り扱いについて、</span>
             <span>ご同意の上ご送信ください。</span>
@@ -239,7 +239,7 @@
             個人情報の取り扱いについて同意して送信する
           </div>
           <div class="rule" v-if="!yes&&company&&name&&mail">※同意チェックボックスを入力してください</div>
-        </div>
+        </div> -->
         <div class="submit" @click="submit">
           <svg-icon icon-class="ico_send"/>入力内容を送信する
         </div>
