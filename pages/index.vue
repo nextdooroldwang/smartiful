@@ -33,9 +33,9 @@
           <h2 class="decp-title">自社サービス開発をsmartifulにしましょう！</h2>
           <div class="decp-content">
             <p class="decp-item"><span class="decp-text">スマート</span><span class="xtag">X</span></p>
-            <p class="decp-item"><span class="decp-text">X高品質</span><span class="xtag">X</span></p>
-            <p class="decp-item"><span class="decp-text">X  速い</span><span class="xtag">X</span></p>
-            <p class="decp-item"><span class="decp-text">X コスト削減</span></p>
+            <p class="decp-item"><span class="decp-text">高品質</span><span class="xtag">X</span></p>
+            <p class="decp-item"><span class="decp-text">速い</span><span class="xtag">X</span></p>
+            <p class="decp-item"><span class="decp-text">コスト削減</span></p>
             </div>
         </div>
       </transition>
@@ -215,13 +215,13 @@
           </div>
           <div class="input" @click="$refs.input4.focus()">
             <textarea
-              style="resize:none;"
+              style="resize:none;height: auto; min-height: 150px"
               ref="input4"
               v-model="mark"
               type="text"
               class="real-input"
               placeholder="なんでもお気軽にご相談ください"
-              rows="2"
+              
             />
           </div>
         </div>
