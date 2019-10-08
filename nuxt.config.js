@@ -30,7 +30,14 @@ export default {
 	/*
 	 ** Nuxt.js modules
 	 */
-	modules: ['@nuxtjs/style-resources'],
+	modules: ['@nuxtjs/style-resources', '@nuxtjs/axios'],
+	// axios: {
+	// 	prefix: '/api/',
+	// 	proxy: true // Can be also an object with default options
+	// },
+	// proxy: {
+	// 	'/api/': { target: 'https://k8riju8wvk.execute-api.ap-northeast-1.amazonaws.com/prod', pathRewrite: {'^/api/': ''}, changeOrigin: true }
+	// },
 	styleResources: {
 		less: './assets/**/*.less'
 	},

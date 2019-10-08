@@ -165,7 +165,7 @@
           <div class="input" @click="$refs.input1.focus()">
             <input
               ref="input1"
-              v-model="company"
+              v-model="company_name"
               type="text"
               class="real-input"
               placeholder="会社名をご記入ください"
@@ -199,7 +199,7 @@
           <div class="input" @click="$refs.input3.focus()">
             <input
               ref="input3"
-              v-model="mail"
+              v-model="mail_address"
               type="text"
               class="real-input"
               placeholder="メールアドレスをご記入ください"
@@ -217,7 +217,7 @@
             <textarea
               style="resize:none;height: auto; min-height: 150px"
               ref="input4"
-              v-model="mark"
+              v-model="content"
               type="text"
               class="real-input"
               placeholder="なんでもお気軽にご相談ください"
@@ -271,10 +271,10 @@ const reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
 export default {
   data () {
     return {
-      company: '',
+      company_name: '',
       name: '',
-      mail: '',
-      mark: '',
+      mail_address: '',
+      content: '',
       state: false,
       height: 90,
       background: 0,
@@ -315,14 +315,24 @@ export default {
       this.$data[key] = !this.$data[key]
     },
     submit () {
-      let { company, name, mail, yes } = this
+      console.log(this.$axios.post)
+      let { company_name, name, mail_address, content } = this
 
-      if (company && name && mail && yes && reg.test(mail)) {
-        let to = '278188438@qq.com'
-        let cc = 'qq278188438@163.com'
-        let subject = 'まずは無料で ご相談ください'
-        let body = `会社名：${company},お名前：${name},メールアドレス：${mail}`
-        window.location = `mailto:${to}?subject=${subject}&cc=${cc}&subject=${subject}&body=${body}`
+      if (company_name && name && mail_address && reg.test(mail_address)) {
+        // let to = '278188438@qq.com'
+        // let cc = 'qq278188438@163.com'
+        // let subject = 'まずは無料で ご相談ください'
+        // let body = `会社名：${company},お名前：${name},メールアドレス：${mail}`
+        // window.location = `mailto:${to}?subject=${subject}&cc=${cc}&subject=${subject}&body=${body}`
+        this.$axios.post('https://k8riju8wvk.execute-api.ap-northeast-1.amazonaws.com/prod/email', {
+          company_name,
+          name,
+          mail_address,
+          content
+        }).then(res => {
+          console.log(res)
+        }).catch(e => {})
+
       } else {
         this.rule()
       }
@@ -341,7 +351,7 @@ export default {
       } else {
         this.rule2 = true
       }
-      if (this.mail && reg.test(this.mail)) {
+      if (this.mail_address && reg.test(this.mail_address)) {
         this.rule3 = false
       } else {
         this.rule3 = true
